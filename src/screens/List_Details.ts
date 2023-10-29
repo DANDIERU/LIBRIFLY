@@ -1,4 +1,4 @@
-class Dashboard extends HTMLElement {
+class ListDetails extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
@@ -17,5 +17,5 @@ class Dashboard extends HTMLElement {
     }
   }
   
-  customElements.define("app-dashboard", Dashboard);
-  export default Dashboard;
+  customElements.define("list-details", ListDetails);
+  export default ListDetails;
