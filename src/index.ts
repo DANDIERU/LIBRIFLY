@@ -40,37 +40,37 @@ class AppContainer extends  HTMLElement {
                 break;
 
                 case screens.BOOK_DETAILS : 
-                const bookDetails = this.ownerDocument.createElement("my-readinglist")
+                const bookDetails = this.ownerDocument.createElement("book-details")
                 this.shadowRoot?.appendChild(bookDetails)
                 break;
 
                 case screens.LIST_DETAILS : 
-                const listDetails = this.ownerDocument.createElement("my-readinglist")
+                const listDetails = this.ownerDocument.createElement("list-details")
                 this.shadowRoot?.appendChild(listDetails)
                 break;
 
                 case screens.GENRE_DETAILS : 
-                const denreDetails = this.ownerDocument.createElement("my-readinglist")
+                const denreDetails = this.ownerDocument.createElement("genre-details")
                 this.shadowRoot?.appendChild(denreDetails)
                 break;
 
                 case screens.SEARCH_DETAILS : 
-                const searchDetails = this.ownerDocument.createElement("my-readinglist")
+                const searchDetails = this.ownerDocument.createElement("search-details")
                 this.shadowRoot?.appendChild(searchDetails)
                 break;
 
                 case screens.USER_INFO : 
-                const userInfo = this.ownerDocument.createElement("my-readinglist")
+                const userInfo = this.ownerDocument.createElement("user-info")
                 this.shadowRoot?.appendChild(userInfo)
                 break;
 
                 case screens.PROFILE : 
-                const profile = this.ownerDocument.createElement("my-readinglist")
+                const profile = this.ownerDocument.createElement("my-profile")
                 this.shadowRoot?.appendChild(profile)
                 break;
 
                 case screens.EDIT_PROFILE : 
-                const editProfile = this.ownerDocument.createElement("my-readinglist")
+                const editProfile = this.ownerDocument.createElement("edit-profile")
                 this.shadowRoot?.appendChild(editProfile)
                 break;
 
