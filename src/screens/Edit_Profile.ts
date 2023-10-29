@@ -1,4 +1,4 @@
-class Dashboard extends HTMLElement {
+class EditProfile extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
@@ -17,5 +17,5 @@ class Dashboard extends HTMLElement {
     }
   }
   
-  customElements.define("app-dashboard", Dashboard);
-  export default Dashboard;
+  customElements.define("edit-profile", EditProfile);
+  export default EditProfile;
