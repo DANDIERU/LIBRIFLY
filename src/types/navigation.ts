@@ -1,0 +1,9 @@
+export enum screens {
+    SIGN_IN = "SIGN_IN",
+    SIGN_UP = "SIGN_UP",
+    DASHBOARD = "DASHBOARD",
+    MY_READING_LISTS = "MY_READING_LISTS",
+    COMMUNITY = "COMMUNITY",
+    EDIT_PROFILE = "EDIT_PROFILE",
+
+}
