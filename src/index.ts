@@ -1,6 +1,16 @@
-
+//import * as components from "./components/export";
 import "./components/export"
-import "./screens/main"
+import "./screens/Book_Details"
+import "./screens/Dashboard"
+import "./screens/Edit_Profile"
+import "./screens/Genre_Details"
+import "./screens/List_Details"
+import "./screens/My_Profile"
+import "./screens/My_Reading_lists"
+import "./screens/Register"
+import "./screens/Search_Details"
+import "./screens/Sign_In"
+import "./screens/User_Info"
 import { addObserver, appState } from "./store/index";
 import { screens } from "./types/navigation";
 
