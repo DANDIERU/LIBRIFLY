@@ -12,17 +12,24 @@ class CardRegister extends HTMLElement {
     render() {
       if (this.shadowRoot) {
         this.shadowRoot.innerHTML = ``;
+        const link = this.ownerDocument.createElement("link")
+        link.setAttribute("rel", "stylesheet")
+        link.setAttribute("href", "/src/components/register/card_register.css")
+        this.shadowRoot?.appendChild(link) 
+
         const registerForm = this.ownerDocument.createElement('div');
         registerForm.classList.add('register-form');
 
         const logo = this.ownerDocument.createElement('img');
-        logo.src = 'ruta_de_la_imagen_del_logo.jpg';
+        logo.classList.add('logo-img');
+        logo.src = '/src/images/logo.png';
         logo.alt = 'Logo';
 
         const h2 = this.ownerDocument.createElement('h2');
         h2.textContent = 'Create Account';
 
         const emailLabel = this.ownerDocument.createElement('h4');
+        emailLabel.classList.add('subtitulo');
         emailLabel.textContent = 'Email';
 
         const emailInput = this.ownerDocument.createElement('input');
@@ -30,12 +37,14 @@ class CardRegister extends HTMLElement {
         emailInput.placeholder = 'Enter your email';
 
         const usernameLabel = this.ownerDocument.createElement('h4');
+        usernameLabel.classList.add('subtitulo');
         usernameLabel.textContent = 'User Name';
 
         const usernameInput = this.ownerDocument.createElement('input');
         usernameInput.placeholder = 'Enter your user name';
 
         const passwordLabel = this.ownerDocument.createElement('h4');
+        passwordLabel.classList.add('subtitulo');
         passwordLabel.textContent = 'Password';
 
         const passwordInput = this.ownerDocument.createElement('input');
@@ -43,6 +52,7 @@ class CardRegister extends HTMLElement {
         passwordInput.placeholder = 'Enter your password';
 
         const termsCheckbox = this.ownerDocument.createElement('input');
+        termsCheckbox.classList.add('check-input')
         termsCheckbox.type = 'checkbox';
         termsCheckbox.id = 'termsCheckbox';
 

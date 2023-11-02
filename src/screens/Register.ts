@@ -20,7 +20,7 @@ class Register extends HTMLElement {
     render() {
 
 if (this.shadowRoot) {
-  this.shadowRoot.innerHTML = `holi`;
+  this.shadowRoot.innerHTML = ``;
 
   const registercontainer = this.ownerDocument.createElement("card-register")
   registercontainer.classList.add('register-container')
