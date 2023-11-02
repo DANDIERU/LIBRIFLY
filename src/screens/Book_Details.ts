@@ -8,7 +8,6 @@ class BooksDetails extends HTMLElement {
       this.render();
     }
   
-    
   
     render() {
       if (this.shadowRoot) {
