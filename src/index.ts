@@ -1,4 +1,4 @@
-//import * as components from "./components/export";
+import * as components from "./components/export";
 import "./components/export"
 import "./screens/Book_Details"
 import "./screens/Dashboard"
@@ -27,7 +27,7 @@ class AppContainer extends  HTMLElement {
     }
 
     render() {
-        if(this.shadowRoot){
+        if(this.shadowRoot){ `<h1>hola</h1>`
             switch (appState.screen) {
                 case screens.SIGN_IN : 
                 const signIn = this.ownerDocument.createElement("sign-in")

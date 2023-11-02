@@ -11,48 +11,48 @@ class CardRegister extends HTMLElement {
   
     render() {
   
-    const registerForm = document.createElement('div');
+    const registerForm = this.ownerDocument.createElement('div');
     registerForm.classList.add('register-form');
 
-    const logo = document.createElement('img');
+    const logo = this.ownerDocument.createElement('img');
     logo.src = 'ruta_de_la_imagen_del_logo.jpg';
     logo.alt = 'Logo';
 
-    const h2 = document.createElement('h2');
+    const h2 = this.ownerDocument.createElement('h2');
     h2.textContent = 'Create Account';
 
-    const emailLabel = document.createElement('h4');
+    const emailLabel = this.ownerDocument.createElement('h4');
     emailLabel.textContent = 'Email';
 
-    const emailInput = document.createElement('input');
+    const emailInput = this.ownerDocument.createElement('input');
     emailInput.type = 'email';
     emailInput.placeholder = 'Enter your email';
 
-    const usernameLabel = document.createElement('h4');
+    const usernameLabel = this.ownerDocument.createElement('h4');
     usernameLabel.textContent = 'User Name';
 
-    const usernameInput = document.createElement('input');
+    const usernameInput = this.ownerDocument.createElement('input');
     usernameInput.placeholder = 'Enter your user name';
 
-    const passwordLabel = document.createElement('h4');
+    const passwordLabel = this.ownerDocument.createElement('h4');
     passwordLabel.textContent = 'Password';
 
-    const passwordInput = document.createElement('input');
+    const passwordInput = this.ownerDocument.createElement('input');
     passwordInput.type = 'password';
     passwordInput.placeholder = 'Enter your password';
 
-    const termsCheckbox = document.createElement('input');
+    const termsCheckbox = this.ownerDocument.createElement('input');
     termsCheckbox.type = 'checkbox';
     termsCheckbox.id = 'termsCheckbox';
 
-    const termsLabel = document.createElement('label');
+    const termsLabel = this.ownerDocument.createElement('label');
     termsLabel.setAttribute('for', 'termsCheckbox');
     termsLabel.textContent = 'I agree to the terms of service & privacy policy';
 
-    const registerButton = document.createElement('button');
+    const registerButton = this.ownerDocument.createElement('button');
     registerButton.textContent = 'Register';
 
-    const registerWithGoogleButton = document.createElement('button');
+    const registerWithGoogleButton = this.ownerDocument.createElement('button');
     registerWithGoogleButton.textContent = 'Register with Google';
 
     // Agregar elementos al formulario de registro
@@ -70,7 +70,7 @@ class CardRegister extends HTMLElement {
     registerForm.appendChild(registerWithGoogleButton);
 
     // Agregar el formulario de registro al documento HTML
-    document.body.appendChild(registerForm);
+    this.shadowRoot?.appendChild(registerForm);
 
     }
   }
