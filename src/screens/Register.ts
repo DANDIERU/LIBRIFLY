@@ -25,6 +25,7 @@ if (this.shadowRoot) {
   const registercontainer = this.ownerDocument.createElement("card-register")
   registercontainer.classList.add('register-container')
   this.shadowRoot?.appendChild(registercontainer)
+  // inssertar una imagen
       }
     }
   }
