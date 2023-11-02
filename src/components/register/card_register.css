@@ -1,19 +1,39 @@
 .register-form {
-    width: 623px;
+    width: 450px;
     height: 700px;
-    flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 70px;
     border-radius: 25px;
     background-color: #f9f9f9;
-    text-align: center;
+
+  }
+
+.container-one{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   
+  .container-two{
+    display: flex;
+  }
+
+  .container-three{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  }
+
+  .label-text{
+    margin-left: 8px;
+  }
+
   .logo-img {
-    width: 100px;
+    width: 156px;
     margin-bottom: 20px;
   }
   
@@ -23,6 +43,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin: 0;
   }
   
   .subtitulo {
@@ -31,25 +52,34 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin: 8px;
+    margin-bottom: 8px;
   }
   
+  .input-info{
+    width: 446px;
+    height: 40px;
+    margin-bottom: 20px;
+
+  }
   input {
     color: #C5C5C5;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-bottom: 40px;
-    width: 446px;
-    height: 50px;
-    flex-shrink: 0;
     border-radius: 10px;
     border: 1px solid #C5C5C5;
+    
   }
+  
   
   .check-inpu{
     margin: 10px 5px;
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    border: 1px solid #C5C5C5;
   }
   
   label {
@@ -70,7 +100,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    margin: 2%;
+    margin: 10px 0;
   }
   
   button:hover {

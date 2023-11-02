@@ -1,0 +1,10 @@
+.register-page{
+    height: 100%;
+    width: 100%;
+    background: #0F051D;
+}
+
+.register-card{
+    display: flex;
+    padding: 93px 80px 93px 780px;
+}

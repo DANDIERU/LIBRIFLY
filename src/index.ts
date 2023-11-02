@@ -7,7 +7,7 @@
 // import "./screens/List_Details"
 // import "./screens/My_Profile"
 // import "./screens/My_Reading_lists"
-import "./screens/Register"
+import "./screens/register/Register"
 // import "./screens/Search_Details"
 // import "./screens/Sign_In"
 // import "./screens/User_Info"
@@ -29,7 +29,7 @@ class AppContainer extends  HTMLElement {
     }
 
     render() {
-        if(this.shadowRoot){ this.shadowRoot.innerHTML = `<h1>hola</h1>`
+        if(this.shadowRoot){ this.shadowRoot.innerHTML = ``;
             switch (appState.screen) {
                 case screens.SIGN_IN : 
                 const signIn = this.ownerDocument.createElement("sign-in")
