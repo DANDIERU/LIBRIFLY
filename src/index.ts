@@ -7,7 +7,7 @@
 // import "./screens/List_Details"
 // import "./screens/My_Profile"
 // import "./screens/My_Reading_lists"
-// import "./screens/Register"
+import "./screens/Register"
 // import "./screens/Search_Details"
 // import "./screens/Sign_In"
 // import "./screens/User_Info"
@@ -37,7 +37,7 @@ class AppContainer extends  HTMLElement {
                 break;
 
                 case screens.REGISTER : 
-                const register = this.ownerDocument.createElement("register")
+                const register = this.ownerDocument.createElement("register-app")
                 this.shadowRoot?.appendChild(register)
                 break;
 

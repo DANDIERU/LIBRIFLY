@@ -1,6 +1,9 @@
 import * as components from "../components/export";
-import { addObserver, appState } from "../store/index";
+import { addObserver} from "../store/index";
 import { screens } from "../types/navigation";
+import { ScreenActions } from "../types/store";
+import { appState, dispatch } from "../store/index";
+
 
 class Register extends HTMLElement {
     constructor() {
@@ -14,11 +17,16 @@ class Register extends HTMLElement {
     }
   
     render() {
-      const registercontainer = this.ownerDocument.createElement("card-register")
-      registercontainer.classList.add('register-container')
-      this.shadowRoot?.appendChild(registercontainer)
+      if (this.shadowRoot) {
+        this.shadowRoot.innerHTML = `holi`;
+      
+        const registercontainer = this.ownerDocument.createElement("card-register")
+        registercontainer.classList.add('register-container')
+        this.shadowRoot?.appendChild(registercontainer)
+            }
+  
     }
   }
   
-  customElements.define("register", Register);
+  customElements.define("register-app", Register);
   export default Register;
