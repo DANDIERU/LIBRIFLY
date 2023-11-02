@@ -1,30 +1,41 @@
-//import { data } from "./navBarLinks/navBarLinks";
+
 export enum AttributeNav {
     "logo" = "logo",
-    "icon_title" = "icon_title",
-    "icon_img" ="icon_img",
     "icon_user" = "icon_user",
-    "user_title" = "user_title"
-
+    "user_title" = "user_title",
+    "dashboard_icon" = "dashboard_icon",
+    "dashboard_title" = "dashboard_title",
+    "readinglist_icon" ="readinglist_icon",
+    "readinglist_title" ="readinglist_title",
+    "logout_icon" ="logout_icon",
+    "logout_title" ="logout_title",
 }
 
 
-export class NavBar extends HTMLElement {
+export default class NavBar extends HTMLElement {
 
-    icon_title?: string = "";
-    icon_img?: string = "";
+    logo?: string = "";
     icon_user?: string = "";
     user_title?: string = "";
-    logo?: string = "";
+    dashboard_icon?: string = "";
+    dashboard_title?: string = "";
+    readinglist_icon?: string = "";
+    readinglist_title?: string = "";
+    logout_icon?: string = "";
+    logout_title?: string = "";   
 
     static get observedAttributes(){
         const attrs: Record <AttributeNav, null> ={
-            icon_title: null,
-            icon_img: null,
+
+            logo: null,
             icon_user: null,
             user_title: null,
-            logo: null,
-            
+            dashboard_icon: null,
+            dashboard_title: null,
+            readinglist_icon: null,
+            readinglist_title: null,
+            logout_icon: null,
+            logout_title: null,        
 
         }
         return Object.keys(attrs);
@@ -90,9 +101,9 @@ export class NavBar extends HTMLElement {
         navItemContainer1.classList.add("nav-itemcontainer");
         
         const icon1 = document.createElement("img");
-        icon1.setAttribute("src", `${this.icon_user}`)        
+        icon1.setAttribute("src", `${this.dashboard_icon}`)        
         const title1 = document.createElement("p")
-        title1.innerText = `${this.icon_title}`
+        title1.innerText = `${this.dashboard_title}`
 
         navItemContainer1.appendChild(icon1)
         navItemContainer1.appendChild(title1)
@@ -105,9 +116,9 @@ export class NavBar extends HTMLElement {
         navItemContainer2.classList.add("nav-itemcontainer");
         
         const icon2 = document.createElement("img");
-        icon2.setAttribute("src", `${this.icon_user}`)        
+        icon2.setAttribute("src", `${this.readinglist_icon}`)        
         const title2 = document.createElement("p")
-        title2.innerText = `${this.icon_title}`
+        title2.innerText = `${this.readinglist_title}`
 
         navItemContainer2.appendChild(icon2)
         navItemContainer2.appendChild(title2)
@@ -125,9 +136,9 @@ export class NavBar extends HTMLElement {
         navItemContainer3.classList.add("nav-itemcontainer");
         
         const icon3 = document.createElement("img");
-        icon3.setAttribute("src", `${this.icon_user}`)        
+        icon3.setAttribute("src", `${this.logout_icon}`)        
         const title3 = document.createElement("p")
-        title3.innerText = `${this.icon_title}`
+        title3.innerText = `${this.logout_title}`
 
         navItemContainer3.appendChild(icon3)
         navItemContainer3.appendChild(title3)
