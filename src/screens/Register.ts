@@ -17,5 +17,5 @@ class Register extends HTMLElement {
     }
   }
   
-  customElements.define("register", Register);
+  customElements.define("register-app", Register);
   export default Register;

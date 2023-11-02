@@ -1,0 +1,1 @@
+export {default as SolidReading} from "./solidReading/solidReading"

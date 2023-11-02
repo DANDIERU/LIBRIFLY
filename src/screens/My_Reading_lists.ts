@@ -7,7 +7,6 @@ class MyReadingList extends HTMLElement {
     connectedCallback() {
       this.render();
     }
-  
     
   
     render() {

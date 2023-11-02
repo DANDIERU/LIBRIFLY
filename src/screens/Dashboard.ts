@@ -15,7 +15,7 @@ class Dashboard extends HTMLElement {
         
       }
     }
-  }
+}
   
-  customElements.define("app-dashboard", Dashboard);
-  export default Dashboard;
+customElements.define("app-dashboard", Dashboard);
+export default Dashboard;
