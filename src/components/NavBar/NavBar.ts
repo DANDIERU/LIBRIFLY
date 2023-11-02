@@ -101,8 +101,10 @@ export default class NavBar extends HTMLElement {
         navItemContainer1.classList.add("nav-itemcontainer");
         
         const icon1 = document.createElement("img");
-        icon1.setAttribute("src", `${this.dashboard_icon}`)        
+        icon1.setAttribute("src", `${this.dashboard_icon}`)
+        icon1.classList.add("icon-1")        
         const title1 = document.createElement("p")
+        title1.classList.add("title-1")
         title1.innerText = `${this.dashboard_title}`
 
         navItemContainer1.appendChild(icon1)
@@ -116,8 +118,10 @@ export default class NavBar extends HTMLElement {
         navItemContainer2.classList.add("nav-itemcontainer");
         
         const icon2 = document.createElement("img");
-        icon2.setAttribute("src", `${this.readinglist_icon}`)        
+        icon2.setAttribute("src", `${this.readinglist_icon}`)
+        icon2.classList.add("icon-2")         
         const title2 = document.createElement("p")
+        title2.classList.add("title-2")
         title2.innerText = `${this.readinglist_title}`
 
         navItemContainer2.appendChild(icon2)
@@ -126,7 +130,7 @@ export default class NavBar extends HTMLElement {
         navContentDiv.appendChild(navItemContainer2)
         //////////////////////////////////
 
-        const hrNav = this.ownerDocument.createElement("div")
+        const hrNav = this.ownerDocument.createElement("hr")
         hrNav.classList.add("hr-nav")
         navContentDiv.appendChild(hrNav)
 
@@ -136,8 +140,10 @@ export default class NavBar extends HTMLElement {
         navItemContainer3.classList.add("nav-itemcontainer");
         
         const icon3 = document.createElement("img");
-        icon3.setAttribute("src", `${this.logout_icon}`)        
+        icon3.setAttribute("src", `${this.logout_icon}`)
+        icon3.classList.add("icon-3")        
         const title3 = document.createElement("p")
+        title3.classList.add("title-3")
         title3.innerText = `${this.logout_title}`
 
         navItemContainer3.appendChild(icon3)

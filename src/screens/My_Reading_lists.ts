@@ -19,7 +19,7 @@ class MyReadingList extends HTMLElement {
 
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "src/screens/My_Reading_lists.css")
+        link.setAttribute("href", "../../src/screens/My_Reading_lists.css")
         this.shadowRoot?.appendChild(link);
 
         ////////////////// NAVBAR /////////////////////
@@ -28,16 +28,16 @@ class MyReadingList extends HTMLElement {
         rectangleNav.classList.add("rectangle-nav")
         rectangleNav.setAttribute(AttributeNav.logo, "../src/icon/Iconlogo.png")
 
-        rectangleNav.setAttribute(AttributeNav.icon_user, "")
+        rectangleNav.setAttribute(AttributeNav.icon_user, "../src/icon/imgprofile.png")
         rectangleNav.setAttribute(AttributeNav.user_title, "Jezzini_03")
 
-        rectangleNav.setAttribute(AttributeNav.dashboard_icon, "")
+        rectangleNav.setAttribute(AttributeNav.dashboard_icon, "../src/icon/dashboardoff.png")
         rectangleNav.setAttribute(AttributeNav.dashboard_title, "Dashboard")
 
-        rectangleNav.setAttribute(AttributeNav.readinglist_icon, "")
+        rectangleNav.setAttribute(AttributeNav.readinglist_icon, "../src/icon/readingon.png")
         rectangleNav.setAttribute(AttributeNav.readinglist_title, "My reading lists")
 
-        rectangleNav.setAttribute(AttributeNav.logout_icon, "")
+        rectangleNav.setAttribute(AttributeNav.logout_icon, "../src/icon/logout.png")
         rectangleNav.setAttribute(AttributeNav.logout_title, "Logout")
 
         this.shadowRoot.appendChild(rectangleNav)
