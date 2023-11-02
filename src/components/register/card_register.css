@@ -59,8 +59,11 @@
     width: 411px;
     height: 40px;
     margin-bottom: 20px;
-
+    color: #484848;
+    padding-left: 10px;
+  
   }
+ 
   input {
     color: #C5C5C5;
     font-size: 18px;
