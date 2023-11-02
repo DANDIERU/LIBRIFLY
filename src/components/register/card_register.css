@@ -2,7 +2,7 @@
     width: 450px;
     height: 700px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     margin: 0 auto;
     padding: 40px 70px;
     border-radius: 25px;
@@ -56,7 +56,7 @@
   }
   
   .input-info{
-    width: 446px;
+    width: 411px;
     height: 40px;
     margin-bottom: 20px;
 

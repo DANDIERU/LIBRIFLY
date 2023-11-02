@@ -8,7 +8,6 @@ export class CardRegister extends HTMLElement {
       this.render();
     }
 
-
     render() {
       if (this.shadowRoot) {
         this.shadowRoot.innerHTML = ``;
