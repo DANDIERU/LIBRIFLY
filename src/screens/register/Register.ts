@@ -20,22 +20,28 @@ class Register extends HTMLElement {
       if (this.shadowRoot) {
         this.shadowRoot.innerHTML = ``;
 
-        const link = this.ownerDocument.createElement("link")
-        link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "/src/screens/register/Register.css")
-        this.shadowRoot?.appendChild(link) 
+        const link = this.ownerDocument.createElement("link");
+        link.setAttribute("rel", "stylesheet");
+        link.setAttribute("href", "/src/screens/register/Register.css");
+        this.shadowRoot?.appendChild(link);
       
-        const registerpage = this.ownerDocument.createElement('section')
-        registerpage.classList.add('register-page')
-        this.shadowRoot?.appendChild(registerpage)
+        const registerpage = this.ownerDocument.createElement('section');
+        registerpage.classList.add('register-page');
+        this.shadowRoot?.appendChild(registerpage);
 
         const registercard = this.ownerDocument.createElement('section');
         registercard.classList.add('register-card');
-        registerpage.appendChild(registercard)
+        registerpage.appendChild(registercard);
 
-        const registercontainer = this.ownerDocument.createElement('card-register')
-        registercontainer.classList.add('register-container')
-        registercard.appendChild(registercontainer)
+        const registercontainer = this.ownerDocument.createElement('card-register');
+        registercontainer.classList.add('register-container');
+        registercard.appendChild(registercontainer);
+
+        const imgcontainer = this.ownerDocument.createElement('img');
+        imgcontainer.classList.add('img-png');
+        imgcontainer.src = '/src/images/register.png'
+        registerpage.appendChild(imgcontainer);
+
             }
   
     }

@@ -2,9 +2,19 @@
     height: 100%;
     width: 100%;
     background: #0F051D;
+    
 }
 
 .register-card{
     display: flex;
     padding: 93px 80px 93px 780px;
+    position: relative;
+}
+.img-png {
+    position: absolute;
+    height: 436px;
+    width: auto;
+    top: 464px;
+    left: 149px;
+    z-index: 1;
 }
