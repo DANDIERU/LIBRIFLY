@@ -52,7 +52,7 @@ export default class SolidReading extends HTMLElement{
         
             const link = this.ownerDocument.createElement("link")
             link.setAttribute("rel", "stylesheet")
-            link.setAttribute("href", "src/components/solidReading/solidReading.css")
+            link.setAttribute("href", "../src/components/solidReading/solidReading.css")
             this.shadowRoot.appendChild(link)
 
             const readingBigDiv = this.ownerDocument.createElement("div")

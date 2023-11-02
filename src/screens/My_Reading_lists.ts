@@ -26,7 +26,7 @@ class MyReadingList extends HTMLElement {
         readingDiv.setAttribute(AttributeReading.main_reading, "My reading List")
         readingDiv.setAttribute(AttributeReading.empty_desc, "Oh, you don't have lists yet.Create your first list")
         readingDiv.setAttribute(AttributeReading.btn_create, "Create list")
-        readingDiv.setAttribute(AttributeReading.img_main, "src/img/girlreadinglist.png")
+        readingDiv.setAttribute(AttributeReading.img_main, "../src/img/girlreadinglist.png")
         this.shadowRoot.appendChild(readingDiv)
         
       }
