@@ -1,1 +1,1 @@
-export {default as CardRegister} from "./register/card_register"
+export {CardRegister} from "./register/card_register"

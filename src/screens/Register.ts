@@ -1,4 +1,4 @@
-import * as components from "../components/export";
+import "../components/export";
 import { addObserver} from "../store/index";
 import { screens } from "../types/navigation";
 import { ScreenActions } from "../types/store";
@@ -20,7 +20,7 @@ class Register extends HTMLElement {
       if (this.shadowRoot) {
         this.shadowRoot.innerHTML = `holi`;
       
-        const registercontainer = this.ownerDocument.createElement("card-register")
+        const registercontainer = this.ownerDocument.createElement('card-register')
         registercontainer.classList.add('register-container')
         this.shadowRoot?.appendChild(registercontainer)
             }

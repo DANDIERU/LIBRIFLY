@@ -1,4 +1,4 @@
-class CardRegister extends HTMLElement {
+export class CardRegister extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
@@ -11,7 +11,7 @@ class CardRegister extends HTMLElement {
 
     render() {
       if (this.shadowRoot) {
-        this.shadowRoot.innerHTML = ``;
+        this.shadowRoot.innerHTML = `hola sapa`;
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
         link.setAttribute("href", "/src/components/register/card_register.css")
@@ -87,5 +87,4 @@ class CardRegister extends HTMLElement {
     }
   }
 
-  customElements.define("card-register", CardRegister);
-  export default CardRegister;
+  customElements.define('card-register', CardRegister);
