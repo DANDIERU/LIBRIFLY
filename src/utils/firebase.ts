@@ -1,3 +1,4 @@
+
 import { initializeApp } from 'firebase/app';
 import { collection, getFirestore, getDocs} from 'firebase/firestore'
 
@@ -25,8 +26,6 @@ const getBooks = async () => {
     })
 
     return transformed;
-
-
 
 }
 
