@@ -1,3 +1,9 @@
+import "../components/export";
+import { navigate } from "../store/actions";
+import { addObserver } from "../store/index";
+import { screens } from "../types/navigation";
+import { ScreenActions } from "../types/store";
+import { appState, dispatch } from "../store/index";
 import { AttributeNav } from "../components/NavBar/NavBar";
 import { AttributeSearch } from "../components/InputSearch/InputSearch";
 import { AttributeTopListBooks } from "../components/TopListBooks/TopListBooks";
@@ -7,12 +13,16 @@ import { data } from "../data";
 import firebase from "../utils/firebase";
 import "../components/export";
 
+
+
+
 class Dashboard extends HTMLElement {
   weekCard: BooksWeek[] = [];
   mightCard: AlsoLikeBooks[] = [];
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    addObserver
   }
 
   connectedCallback() {
