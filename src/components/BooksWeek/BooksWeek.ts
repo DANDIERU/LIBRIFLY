@@ -1,3 +1,7 @@
+import { navigate } from "../../store/actions";
+import { dispatch } from "../../store/index";
+import { screens } from "../../types/navigation";
+
 export enum AttributeBooksWeek {
 	"weekcover" = "weekcover",
     "weekicon" = "weekicon",
@@ -70,9 +74,12 @@ export class BooksWeek extends HTMLElement {
 			fontLink.rel = 'stylesheet';	
 
             const weekContainer = this.ownerDocument.createElement("div")
-            weekContainer.classList.add("week-cont")            
+            weekContainer.classList.add("week-cont") 
             const secondCover = this.ownerDocument.createElement("img")
             secondCover.classList.add("second-cover")
+            secondCover.addEventListener("click", ()=>{
+                dispatch(navigate(screens.BOOK_DETAILS)) })
+
             const weekIcon = this.ownerDocument.createElement("img")
             weekIcon.classList.add("week-icon")
             const subContainer2 = this.ownerDocument.createElement("div")

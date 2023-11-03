@@ -1,3 +1,7 @@
+import { navigate } from "../../store/actions";
+import { dispatch } from "../../store/index";
+import { screens } from "../../types/navigation";
+
 export class profileForm extends HTMLElement {
     constructor() {
       super();
@@ -47,10 +51,14 @@ export class profileForm extends HTMLElement {
 
         const cancelButton = this.ownerDocument.createElement('button');
         cancelButton.textContent = 'Cancel';
+        cancelButton.addEventListener("click", ()=>{
+          dispatch(navigate(screens.PROFILE)) })
         buttonSection.appendChild(cancelButton);
 
         const saveButton = this.ownerDocument.createElement('button');
         saveButton.textContent = 'Save';
+        saveButton.addEventListener("click", ()=>{
+          dispatch(navigate(screens.PROFILE)) })
         buttonSection.appendChild(saveButton);
 
     

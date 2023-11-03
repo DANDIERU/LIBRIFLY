@@ -1,3 +1,7 @@
+import { navigate } from "../../store/actions";
+import { dispatch } from "../../store/index";
+import { screens } from "../../types/navigation";
+
 export class CardSignIn extends HTMLElement {
     constructor() {
       super();
@@ -86,13 +90,17 @@ export class CardSignIn extends HTMLElement {
         containerthree.classList.add('container-three');
         containerone.appendChild(containerthree);
 
-        const registerButton = this.ownerDocument.createElement('button');
-        registerButton.textContent = 'Sign In';
-        containerthree.appendChild(registerButton);
+        const singinButton = this.ownerDocument.createElement('button');
+        singinButton.textContent = 'Sign In';
+        singinButton.addEventListener("click", ()=>{
+          dispatch(navigate(screens.DASHBOARD)) })
+        containerthree.appendChild(singinButton);
 
         const signUpLink = document.createElement('a');
         signUpLink.setAttribute('href', '#');
         signUpLink.textContent = "Don't Have an Account? Sign Up for Free";
+        signUpLink.addEventListener("click", ()=>{
+          dispatch(navigate(screens.REGISTER)) })
         containerthree.appendChild(signUpLink)
 
     
