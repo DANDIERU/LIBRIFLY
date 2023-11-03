@@ -1,0 +1,82 @@
+.modal-div{
+    width: 894px;
+    height: 451px;
+    border-radius: 25px;
+    background: #484848;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.cover-div{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-div {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    position: relative;
+    
+}
+
+.cover-img{
+    width: 226.398px;
+    height: 343px;
+}
+
+.exit-div{
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.nameurlist{
+
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.input-name{
+    border: none;
+    border-bottom: 2px solid #8C8C8C; /* Cambia el color como desees */
+    outline: none;
+    background: none;
+    color: #8C8C8C;
+    font-family: Poppins;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.btn-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-create{
+    width: 212px;
+    height: 61px;
+    border-radius: 5px;
+    background: #9497FF;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    border: none;
+    margin-top: 30px;
+       
+}
+

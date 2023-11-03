@@ -11,7 +11,7 @@ class GenreDetails extends HTMLElement {
     
   
     render() {
-      if (this.shadowRoot) {
+      if (this.shadowRoot) {        
         
       }
     }
