@@ -1,0 +1,21 @@
+header {
+        display: flex;
+        align-items: center;
+}
+
+.user-image {
+    height: 257px;
+    width: auto;
+    border-radius: 139px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+}

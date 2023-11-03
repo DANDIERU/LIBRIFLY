@@ -3,6 +3,7 @@ import { addObserver} from "../../store/index";
 import { screens } from "../../types/navigation";
 import { ScreenActions } from "../../types/store";
 import { appState, dispatch } from "../../store/index";
+import { AttributeNav } from "../../components/NavBar/NavBar";
 
 class MyProfile extends HTMLElement {
     constructor() {
@@ -24,18 +25,40 @@ class MyProfile extends HTMLElement {
         link.setAttribute("rel", "stylesheet");
         link.setAttribute("href", "/src/screens/profile/My_Profile.css");
         this.shadowRoot?.appendChild(link);
+
+        const Profilepage = this.ownerDocument.createElement('section');
+        Profilepage.classList.add('profile-page');
+        this.shadowRoot?.appendChild(Profilepage);
+
+        // Navbar
       
-        const ProfileInpage = this.ownerDocument.createElement('section');
-        ProfileInpage.classList.add('profile-page');
-        this.shadowRoot?.appendChild(ProfileInpage);
+        const rectangleNav = this.ownerDocument.createElement("navbar-component")
+        rectangleNav.classList.add("rectangle-nav")
+        rectangleNav.setAttribute(AttributeNav.logo, "../src/icon/Iconlogo.png")
+
+        rectangleNav.setAttribute(AttributeNav.icon_user, "../src/icon/imgprofile.png")
+        rectangleNav.setAttribute(AttributeNav.user_title, "Jezzini_03")
+
+        rectangleNav.setAttribute(AttributeNav.dashboard_icon, "../src/icon/dashboardon.png")
+        rectangleNav.setAttribute(AttributeNav.dashboard_title, "Dashboard")
+
+        rectangleNav.setAttribute(AttributeNav.readinglist_icon, "../src/icon/readingoff.png")
+        rectangleNav.setAttribute(AttributeNav.readinglist_title, "My reading lists")
+
+        rectangleNav.setAttribute(AttributeNav.logout_icon, "../src/icon/logout.png")
+        rectangleNav.setAttribute(AttributeNav.logout_title, "Logout")
+
+        Profilepage.appendChild(rectangleNav);
+
+        // Card
 
         const profilecard = this.ownerDocument.createElement('section');
-        profilecard.classList.add('profile-card');
-        ProfileInpage.appendChild(profilecard);
+        profilecard.classList.add('profile-container');
+        Profilepage.appendChild(profilecard);
 
         const profilecontainer = this.ownerDocument.createElement('profile-app');
-        profilecontainer.classList.add('profile-container');
-        ProfileInpage.appendChild(profilecontainer);
+        profilecontainer.classList.add('profile-card');
+        profilecard.appendChild(profilecontainer);
 
       }
     }

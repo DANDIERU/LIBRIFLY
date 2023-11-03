@@ -11,6 +11,12 @@ export class profile extends HTMLElement {
     render() {
       if (this.shadowRoot) {
         this.shadowRoot.innerHTML = ``;
+
+        const link = this.ownerDocument.createElement("link");
+        link.setAttribute("rel", "stylesheet");
+        link.setAttribute("href", "/src/components/profile/profile.css");
+        this.shadowRoot?.appendChild(link);
+
         const profile = this.ownerDocument.createElement('div');
         this.shadowRoot.appendChild(profile);
 
@@ -31,16 +37,22 @@ export class profile extends HTMLElement {
         profile.appendChild(userSection);
 
         const userImage = this.ownerDocument.createElement('img');
-        userImage.setAttribute('src', 'imagen-de-usuario.jpg'); 
+        userImage.classList.add('user-image')
+        userImage.setAttribute('src', '/src/images/image 1.png'); 
         userSection.appendChild(userImage);
+
+        const infoContainer = this.ownerDocument.createElement('section');
+        infoContainer.classList.add('info-container');
+        userSection.appendChild(infoContainer);
+
 
         const username = this.ownerDocument.createElement('h2');
         username.textContent = 'Username';
-        userSection.appendChild(username);
+        infoContainer.appendChild(username);
         
         const description = this.ownerDocument.createElement('p');
         description.textContent = 'Description';
-        userSection.appendChild(description);
+        infoContainer.appendChild(description);
 
     
       }
