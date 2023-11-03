@@ -8,13 +8,20 @@
 .register-card{
     display: flex;
     padding: 93px 80px 93px 780px;
+    top: 10%;
+    left: 1%;
     position: relative;
 }
+
+.register-containe{
+    margin: 50px;
+}
+
 .img-png {
     position: absolute;
-    height: 436px;
+    height: 388px;
     width: auto;
-    top: 464px;
-    left: 149px;
+    top: 481px;
+    left: 226px;
     z-index: 1;
 }

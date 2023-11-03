@@ -1,3 +1,9 @@
+import "../../components/export";
+import { addObserver} from "../../store/index";
+import { screens } from "../../types/navigation";
+import { ScreenActions } from "../../types/store";
+import { appState, dispatch } from "../../store/index";
+
 class SignIn extends HTMLElement {
     constructor() {
       super();

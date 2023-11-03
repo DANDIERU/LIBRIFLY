@@ -34,6 +34,16 @@ export class CardRegister extends HTMLElement {
         h2.textContent = 'Create Account';
         containerone.appendChild(h2);
 
+        const usernameLabel = this.ownerDocument.createElement('h4');
+        usernameLabel.classList.add('subtitulo');
+        usernameLabel.textContent = 'User Name';
+        containerone.appendChild(usernameLabel);
+
+        const usernameInput = this.ownerDocument.createElement('input');
+        usernameInput.classList.add('input-info');
+        usernameInput.placeholder = 'Enter your user name';
+        containerone.appendChild(usernameInput);
+
         const emailLabel = this.ownerDocument.createElement('h4');
         emailLabel.classList.add('subtitulo');
         emailLabel.textContent = 'Email';
@@ -44,16 +54,6 @@ export class CardRegister extends HTMLElement {
         emailInput.type = 'email';
         emailInput.placeholder = 'Enter your email';
         containerone.appendChild(emailInput);
-
-        const usernameLabel = this.ownerDocument.createElement('h4');
-        usernameLabel.classList.add('subtitulo');
-        usernameLabel.textContent = 'User Name';
-        containerone.appendChild(usernameLabel);
-
-        const usernameInput = this.ownerDocument.createElement('input');
-        usernameInput.classList.add('input-info');
-        usernameInput.placeholder = 'Enter your user name';
-        containerone.appendChild(usernameInput);
 
         const passwordLabel = this.ownerDocument.createElement('h4');
         passwordLabel.classList.add('subtitulo');
