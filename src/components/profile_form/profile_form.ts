@@ -12,45 +12,16 @@ export class profileForm extends HTMLElement {
       if (this.shadowRoot) {
         this.shadowRoot.innerHTML = ``;
 
-        const profile = this.ownerDocument.createElement('div');
-        this.shadowRoot.appendChild(profile);
-
-
-        const header = this.ownerDocument.createElement('header');
-        profile.appendChild(header);
-
-        const title = this.ownerDocument.createElement('h1');
-        title.textContent = 'My Profile';
-        header.appendChild(title);
-
-        const icon = this.ownerDocument.createElement('span');
-        icon.textContent = '👤'; 
-        header.appendChild(icon);
-
-        
-        const userSection = this.ownerDocument.createElement('section');
-        profile.appendChild(userSection);
-
-        const userImage = this.ownerDocument.createElement('img');
-        userImage.setAttribute('src', 'imagen-de-usuario.jpg'); 
-        userSection.appendChild(userImage);
-
-        const username = this.ownerDocument.createElement('h2');
-        username.textContent = 'Username';
-        userSection.appendChild(username);
-        
-        const description = this.ownerDocument.createElement('p');
-        description.textContent = 'Description';
-        userSection.appendChild(description);
-
-       
         const formSection = this.ownerDocument.createElement('section');
-        profile.appendChild(formSection);
+        formSection.classList.add('form-section')
+        this.shadowRoot.appendChild(formSection);
 
         const form = this.ownerDocument.createElement('form');
+        form.classList.add('from-container')
         formSection.appendChild(form);
 
         const emailHeading = this.ownerDocument.createElement('h3');
+        emailHeading.classList.add('subtitle')
         emailHeading.textContent = 'Email Address';
         form.appendChild(emailHeading);
 
@@ -60,6 +31,7 @@ export class profileForm extends HTMLElement {
         form.appendChild(emailInput);
 
         const passwordHeading = this.ownerDocument.createElement('h3');
+        passwordHeading.classList.add('subtitle')
         passwordHeading.textContent = 'Password';
         form.appendChild(passwordHeading);
 
@@ -70,7 +42,8 @@ export class profileForm extends HTMLElement {
 
         // Crear la sección de botones
         const buttonSection = this.ownerDocument.createElement('section');
-        profile.appendChild(buttonSection);
+        buttonSection.classList.add('button-section')
+        formSection.appendChild(buttonSection);
 
         const cancelButton = this.ownerDocument.createElement('button');
         cancelButton.textContent = 'Cancel';
