@@ -5,7 +5,7 @@ import { screens } from "../types/navigation";
 
 const emptyState = {
     //pantalla inicial lo que se muestra 
-  screen: screens.SIGN_IN,
+  screen: screens.PROFILE,
 };
 
 export let appState = Storage.get<AppState>({
