@@ -115,3 +115,13 @@
     outline: none;
   }
   
+  a {
+    text-decoration: none;
+    color: #484848;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+   }

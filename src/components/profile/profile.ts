@@ -1,3 +1,7 @@
+import { navigate } from "../../store/actions";
+import { dispatch } from "../../store/index";
+import { screens } from "../../types/navigation";
+
 export class profile extends HTMLElement {
     constructor() {
       super();
@@ -28,8 +32,10 @@ export class profile extends HTMLElement {
         title.textContent = 'My Profile';
         header.appendChild(title);
 
-        const icon = this.ownerDocument.createElement('span');
-        icon.textContent = '👤'; 
+        const icon = this.ownerDocument.createElement('img');
+        icon.classList.add('icon-img')
+        icon.src = '/src/images/edit-03.png'; 
+        icon.alt = 'icon'
         header.appendChild(icon);
 
         

@@ -25,7 +25,8 @@ class MyProfile extends HTMLElement {
         link.setAttribute("rel", "stylesheet");
         link.setAttribute("href", "/src/screens/profile/My_Profile.css");
         this.shadowRoot?.appendChild(link);
-
+      
+        // page container
         const Profilepage = this.ownerDocument.createElement('section');
         Profilepage.classList.add('profile-page');
         this.shadowRoot?.appendChild(Profilepage);
@@ -50,15 +51,46 @@ class MyProfile extends HTMLElement {
 
         Profilepage.appendChild(rectangleNav);
 
+        const sectionContainer = this.ownerDocument.createElement('div');
+        sectionContainer.classList.add('section-container');
+        Profilepage.appendChild(sectionContainer);
+
+
         // Card
 
         const profilecard = this.ownerDocument.createElement('section');
         profilecard.classList.add('profile-container');
-        Profilepage.appendChild(profilecard);
+        sectionContainer.appendChild(profilecard);
 
         const profilecontainer = this.ownerDocument.createElement('profile-app');
         profilecontainer.classList.add('profile-card');
         profilecard.appendChild(profilecontainer);
+
+        // listas
+
+        const listContainer = this.ownerDocument.createElement('section');
+        listContainer.classList.add('list-container');
+        sectionContainer.appendChild(listContainer);
+
+        const myList = this.ownerDocument.createElement('h2');
+        myList.textContent = 'My Lists';
+        listContainer.appendChild(myList);
+
+        const hrlits = this.ownerDocument.createElement("hr");
+        hrlits.classList.add("hr-nav");
+        listContainer.appendChild(hrlits);
+
+        const listCards = this.ownerDocument.createElement('section');
+        listCards.classList.add('list-cards');
+        listContainer.appendChild(listCards);
+
+        const listCard = this.ownerDocument.createElement('');
+        listCard.classList.add('list-card');
+        listCards.appendChild(listCard);
+
+
+
+
 
       }
     }
