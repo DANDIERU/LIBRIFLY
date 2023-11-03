@@ -1,3 +1,7 @@
+import { navigate } from "../../store/actions";
+import { dispatch } from "../../store/index";
+import { screens } from "../../types/navigation";
+
 export class profileForm extends HTMLElement {
     constructor() {
       super();

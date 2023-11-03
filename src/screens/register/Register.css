@@ -7,9 +7,10 @@
 
 .register-card{
     display: flex;
-    padding: 35px 80px 40px;
+    width: 700px;
+    padding: 35px 612px 40px;
     top: 10%;
-    left: 43%;
+    left: 13%;
     position: relative;
 }
 

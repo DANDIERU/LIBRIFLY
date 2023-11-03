@@ -1,3 +1,6 @@
+import { navigate } from "../../store/actions";
+import { dispatch } from "../../store/index";
+import { screens } from "../../types/navigation";
 
 export enum AttributeNav {
     "logo" = "logo",
@@ -84,6 +87,8 @@ export class NavBar extends HTMLElement {
 
         const divProfile = this.ownerDocument.createElement("div")
         divProfile.classList.add("div-profile")
+        divProfile.addEventListener("click", ()=>{
+          dispatch(navigate(screens.PROFILE)) })
 
         const imgProfile = this.ownerDocument.createElement("img")
         imgProfile.classList.add("img-profile")
@@ -99,6 +104,8 @@ export class NavBar extends HTMLElement {
 
         const navItemContainer1 = this.ownerDocument.createElement("div");
         navItemContainer1.classList.add("nav-itemcontainer");
+        navItemContainer1.addEventListener("click", ()=>{
+          dispatch(navigate(screens.DASHBOARD)) })
         
         const icon1 = document.createElement("img");
         icon1.setAttribute("src", `${this.dashboard_icon}`)
@@ -116,6 +123,8 @@ export class NavBar extends HTMLElement {
 
         const navItemContainer2 = this.ownerDocument.createElement("div");
         navItemContainer2.classList.add("nav-itemcontainer");
+        navItemContainer2.addEventListener("click", ()=>{
+          dispatch(navigate(screens.MY_READING_LISTS)) })
         
         const icon2 = document.createElement("img");
         icon2.setAttribute("src", `${this.readinglist_icon}`)
@@ -138,6 +147,8 @@ export class NavBar extends HTMLElement {
 
         const navItemContainer3 = this.ownerDocument.createElement("div");
         navItemContainer3.classList.add("nav-itemcontainer");
+        navItemContainer3.addEventListener("click", ()=>{
+          dispatch(navigate(screens.REGISTER)) })
         
         const icon3 = document.createElement("img");
         icon3.setAttribute("src", `${this.logout_icon}`)
