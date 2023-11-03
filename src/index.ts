@@ -2,7 +2,7 @@
 // import "./components/export"
 // import "./screens/Book_Details"
 // import "./screens/Dashboard"
-// import "./screens/Edit_Profile"
+import "./screens/edit_profile/Edit_Profile"
 // import "./screens/Genre_Details"
 // import "./screens/List_Details"
 // import "./screens/My_Profile"
