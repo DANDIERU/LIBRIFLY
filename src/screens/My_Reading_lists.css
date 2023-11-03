@@ -1,0 +1,38 @@
+.main-cont{
+    background: #0F051D;
+    width: 100%;    
+    display: flex;
+}
+
+.reading-div{
+    width: 280%;
+    display: flex;
+    justify-content: center;   
+    
+}
+
+.divSecond {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-div {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280%;
+}
+
+.empty-word{
+    color: #2D1C45;
+    font-family: Poppins;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+    
