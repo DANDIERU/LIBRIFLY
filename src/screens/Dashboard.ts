@@ -35,6 +35,7 @@ class Dashboard extends HTMLElement {
 
         rectangleNav.setAttribute(AttributeNav.readinglist_icon, "../src/icon/readingoff.png")
         rectangleNav.setAttribute(AttributeNav.readinglist_title, "My reading lists")
+        
 
         rectangleNav.setAttribute(AttributeNav.logout_icon, "../src/icon/logout.png")
         rectangleNav.setAttribute(AttributeNav.logout_title, "Logout")
