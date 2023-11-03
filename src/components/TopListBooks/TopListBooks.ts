@@ -78,7 +78,7 @@ export class TopListBooks extends HTMLElement {
       profileContainer.classList.add("profile-container");
       // cambbiar a user info
       profileContainer.addEventListener("click", ()=>{
-        dispatch(navigate(screens.REGISTER)) });
+        dispatch(navigate(screens.USER_INFO)) });
 
       const profileImg = this.ownerDocument.createElement("img");
       profileImg.classList.add("profile-img");

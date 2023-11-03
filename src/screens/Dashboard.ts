@@ -1,4 +1,4 @@
-import "../../components/export";
+import "../components/export";
 import { navigate } from "../store/actions";
 import { addObserver } from "../store/index";
 import { screens } from "../types/navigation";

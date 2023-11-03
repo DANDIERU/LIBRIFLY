@@ -16,50 +16,56 @@ export class profileForm extends HTMLElement {
       if (this.shadowRoot) {
         this.shadowRoot.innerHTML = ``;
 
-        const formSection = this.ownerDocument.createElement('section');
-        formSection.classList.add('form-section')
-        this.shadowRoot.appendChild(formSection);
+        const link = this.ownerDocument.createElement("link");
+        link.setAttribute("rel", "stylesheet");
+        link.setAttribute("href", "/src/components/profile_form/profile_form.css");
+        this.shadowRoot?.appendChild(link);
 
-        const form = this.ownerDocument.createElement('form');
-        form.classList.add('from-container')
-        formSection.appendChild(form);
+        const profileForm = document.createElement('div');
+        profileForm.classList.add('profile-form');
+        this.shadowRoot.appendChild(profileForm);
 
-        const emailHeading = this.ownerDocument.createElement('h3');
-        emailHeading.classList.add('subtitle')
-        emailHeading.textContent = 'Email Address';
-        form.appendChild(emailHeading);
+        // Crear campos de entrada y etiquetas
+        const emailLabel = document.createElement('label');
+        emailLabel.textContent = 'Email Address:';
+        profileForm.appendChild(emailLabel);
 
-        const emailInput = this.ownerDocument.createElement('input');
+        const emailInput = document.createElement('input');
         emailInput.setAttribute('type', 'text');
         emailInput.setAttribute('placeholder', 'Enter your email address');
-        form.appendChild(emailInput);
+        profileForm.appendChild(emailInput);
 
-        const passwordHeading = this.ownerDocument.createElement('h3');
-        passwordHeading.classList.add('subtitle')
-        passwordHeading.textContent = 'Password';
-        form.appendChild(passwordHeading);
+        const passwordLabel = document.createElement('label');
+        passwordLabel.textContent = 'Password:';
+        profileForm.appendChild(passwordLabel);
 
-        const passwordInput = this.ownerDocument.createElement('input');
+        const passwordInput = document.createElement('input');
         passwordInput.setAttribute('type', 'password');
         passwordInput.setAttribute('placeholder', 'Enter your password');
-        form.appendChild(passwordInput);
+        profileForm.appendChild(passwordInput);
 
-        // Crear la sección de botones
-        const buttonSection = this.ownerDocument.createElement('section');
-        buttonSection.classList.add('button-section')
-        formSection.appendChild(buttonSection);
+        const imgLabel = document.createElement('label');
+        imgLabel.textContent = 'Profile Image:';
+        profileForm.appendChild(imgLabel);
 
-        const cancelButton = this.ownerDocument.createElement('button');
+        const imgInput = document.createElement('input');
+        imgInput.setAttribute('type', 'file');
+        profileForm.appendChild(imgInput);
+
+        // Crear botones
+        const cancelButton = document.createElement('button');
         cancelButton.textContent = 'Cancel';
         cancelButton.addEventListener("click", ()=>{
           dispatch(navigate(screens.PROFILE)) })
-        buttonSection.appendChild(cancelButton);
+        profileForm.appendChild(cancelButton);
 
-        const saveButton = this.ownerDocument.createElement('button');
+        const saveButton = document.createElement('button');
         saveButton.textContent = 'Save';
         saveButton.addEventListener("click", ()=>{
           dispatch(navigate(screens.PROFILE)) })
-        buttonSection.appendChild(saveButton);
+        profileForm.appendChild(saveButton);
+
+
 
     
       }
