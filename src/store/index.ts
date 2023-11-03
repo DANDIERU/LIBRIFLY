@@ -4,8 +4,8 @@ import { reducer } from "./reducer";
 import { screens } from "../types/navigation";
 
 const emptyState = {
-    //pantalla inicial lo que se muestra 
-  screen: screens.PROFILE,
+    //pantalla inicial lo que se muestra
+  screen: screens.REGISTER,
 };
 
 export let appState = Storage.get<AppState>({
