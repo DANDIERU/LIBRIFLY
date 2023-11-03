@@ -1,19 +1,20 @@
-import * as components from "./components/export";
-import { navigate } from "./store/actions";
-import "./components/export"
-import "./screens/Book_Details"
-import "./screens/Dashboard"
-import "./screens/Edit_Profile"
-import "./screens/Genre_Details"
-import "./screens/List_Details"
-import "./screens/My_Profile"
-import "./screens/My_Reading_lists"
-import "./screens/Register"
-import "./screens/Search_Details"
-import "./screens/Sign_In"
-import "./screens/User_Info"
+// import * as components from "./components/export";
+// import "./components/export"
+// import "./screens/Book_Details"
+// import "./screens/Dashboard"
+import "./screens/edit_profile/Edit_Profile"
+// import "./screens/Genre_Details"
+// import "./screens/List_Details"
+import "./screens/profile/My_Profile"
+// import "./screens/My_Reading_lists"
+import "./screens/register/Register"
+// import "./screens/Search_Details"
+import "./screens/sign_in/Sign_In"
+// import "./screens/User_Info"
 import { addObserver, appState } from "./store/index";
 import { screens } from "./types/navigation";
+import { navigate } from "./store/actions";
+import { Actions } from "./types/store";
 
 
 class AppContainer extends  HTMLElement {
@@ -28,8 +29,12 @@ class AppContainer extends  HTMLElement {
     }
 
     render() {
+
+        if(this.shadowRoot){ this.shadowRoot.innerHTML = ``;
+
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = ``;
+
             switch (appState.screen) {
                 case screens.SIGN_IN :
                 const signIn = this.ownerDocument.createElement("sign-in")
@@ -93,6 +98,6 @@ class AppContainer extends  HTMLElement {
 
     }
 }
-
-customElements.define("app-container", AppContainer)
+}
+customElements.define("app-container", AppContainer);
 export default AppContainer;

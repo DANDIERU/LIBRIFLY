@@ -1,0 +1,132 @@
+.signin-form {
+    width: 450px;
+    height: 600px;
+    display: flex;
+    flex-direction: column; 
+    margin: 0 auto;
+    padding: 40px 70px;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+
+  }
+
+  
+  .container-two{
+    display: flex;
+  }
+
+  .container-three{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  
+  }
+   a {
+    text-decoration: none;
+    color: #484848;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+   }
+
+  .label-text{
+    margin-left: 8px;
+    margin-right: 180px;
+  }
+
+  .logo-img {
+    width: 156px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: #484848;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+  }
+
+  h3 {
+    color: #8C8C8C;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .subtitulo {
+    color: #484848;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 8px;
+  }
+  
+  .input-info{
+    width: 411px;
+    height: 40px;
+    margin-bottom: 15px;
+    color: #484848;
+    padding-left: 10px;
+  
+  }
+ 
+  input {
+    color: #C5C5C5;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 10px;
+    border: 1px solid #C5C5C5;
+    
+  }
+  
+  
+  .check-inpu{
+    margin: 10px 5px;
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    border: 1px solid #C5C5C5;
+  }
+  
+  label {
+    font-size: 14px;
+    color: #C5C5C5;
+    display: block;
+    text-align: left;
+  }
+  
+  
+  button {
+    width: 414px;
+    height: 50px;
+    border-radius: 26px;
+    border: 2px solid #9497FF;
+    color: #9497FF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 10px 0;
+  }
+  
+  button:hover {
+    background: #9497FF;
+    color: #fff;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  

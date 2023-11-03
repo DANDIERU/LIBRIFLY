@@ -1,0 +1,27 @@
+.register-page{
+    height: 100%;
+    width: 100%;
+    background: #0F051D;
+    
+}
+
+.register-card{
+    display: flex;
+    padding: 35px 80px 40px;
+    top: 10%;
+    left: 43%;
+    position: relative;
+}
+
+.register-container {
+    margin: 50px;
+}
+
+.img-png {
+    position: absolute;
+    height: 388px;
+    width: auto;
+    top: 481px;
+    left: 375px;
+    z-index: 1;
+}
