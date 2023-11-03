@@ -19,8 +19,11 @@ class MyReadingList extends HTMLElement {
 
         const link = this.ownerDocument.createElement("link")
         link.setAttribute("rel", "stylesheet")
-        link.setAttribute("href", "../../src/screens/My_Reading_lists.css")
+        link.setAttribute("href", "/src/screens/My_Reading_lists.css")
         this.shadowRoot?.appendChild(link);
+
+        const mainCont = this.ownerDocument.createElement("main")
+        mainCont.classList.add("main-cont")        
 
         ////////////////// NAVBAR /////////////////////
 
@@ -40,17 +43,21 @@ class MyReadingList extends HTMLElement {
         rectangleNav.setAttribute(AttributeNav.logout_icon, "../src/icon/logout.png")
         rectangleNav.setAttribute(AttributeNav.logout_title, "Logout")
 
-        this.shadowRoot.appendChild(rectangleNav)
+        mainCont.appendChild(rectangleNav)
+
+        
 
         ///////////////// READING COMPONENT //////////////
 
-        /*const readingDiv = this.ownerDocument.createElement("solid-reading")
+        const readingDiv = this.ownerDocument.createElement("solid-reading")
         readingDiv.classList.add("reading-div")
         readingDiv.setAttribute(AttributeReading.main_reading, "My reading List")
         readingDiv.setAttribute(AttributeReading.empty_desc, "Oh, you don't have lists yet.Create your first list")
         readingDiv.setAttribute(AttributeReading.btn_create, "Create list")
         readingDiv.setAttribute(AttributeReading.img_main, "../src/img/girlreadinglist.png")
-        this.shadowRoot.appendChild(readingDiv)*/
+        mainCont.appendChild(readingDiv)
+
+        this.shadowRoot.appendChild(mainCont)
         
       }
     }
