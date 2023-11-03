@@ -10,7 +10,7 @@ import "./screens/My_Reading_lists"
 import "./screens/register/Register"
 import "./screens/Search_Details"
 import "./screens/sign_in/Sign_In"
-import "./screens/User_Info"
+import "./screens/user_info/User_Info"
 import { addObserver, appState } from "./store/index";
 import { screens } from "./types/navigation";
 import { navigate } from "./store/actions";

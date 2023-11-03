@@ -1,3 +1,9 @@
+import "../../components/export";
+import { navigate } from "../store/actions";
+import { addObserver } from "../store/index";
+import { screens } from "../types/navigation";
+import { ScreenActions } from "../types/store";
+import { appState, dispatch } from "../store/index";
 import { AttributeNav } from "../components/NavBar/NavBar";
 import { AttributeSearch } from "../components/InputSearch/InputSearch";
 import { AttributeTopListBooks } from "../components/TopListBooks/TopListBooks";
@@ -6,11 +12,15 @@ import { AttributeBooksWeek, BooksWeek} from "../components/BooksWeek/BooksWeek"
 import { data } from "../data";
 import "../components/export";
 
+
+
+
 class Dashboard extends HTMLElement {
   weekCard: BooksWeek[] = [];
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    addObserver
   }
 
   connectedCallback() {
@@ -245,12 +255,15 @@ class Dashboard extends HTMLElement {
       const diveRectangleAlsoLike = this.ownerDocument.createElement("div");
       diveRectangleAlsoLike.classList.add("container-also-like");
       const rectangleAlsoLike = this.ownerDocument.createElement("also-card");
+      
+      
 
       rectangleAlsoLike.classList.add("rectangle-also-like");
       rectangleAlsoLike.setAttribute(
         AttributeAlsoLikeBooks.onlybook,
         "../src/img/cover1.png"
       );
+      
       
       const rectangleAlsoLike2 = this.ownerDocument.createElement("also-card");
       rectangleAlsoLike2.setAttribute(
