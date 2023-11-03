@@ -36,6 +36,8 @@ export class profile extends HTMLElement {
         icon.classList.add('icon-img')
         icon.src = '/src/images/edit-03.png'; 
         icon.alt = 'icon'
+        icon.addEventListener("click", ()=>{
+          dispatch(navigate(screens.EDIT_PROFILE)) })
         header.appendChild(icon);
 
         

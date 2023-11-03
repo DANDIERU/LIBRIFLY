@@ -1,3 +1,7 @@
+import { navigate } from "../../store/actions";
+import { dispatch } from "../../store/index";
+import { screens } from "../../types/navigation";
+
 export enum AttributeDetails {
     "cover_detail" = "cover_detail",
     "title_detail" ="title_detail",
