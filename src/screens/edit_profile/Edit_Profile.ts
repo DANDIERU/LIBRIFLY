@@ -8,6 +8,7 @@ class EditProfile extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
+      addObserver(this);
     }
   
     connectedCallback() {

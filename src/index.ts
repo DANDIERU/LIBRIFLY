@@ -5,7 +5,7 @@
 import "./screens/edit_profile/Edit_Profile"
 // import "./screens/Genre_Details"
 // import "./screens/List_Details"
-// import "./screens/My_Profile"
+import "./screens/profile/My_Profile"
 // import "./screens/My_Reading_lists"
 import "./screens/register/Register"
 // import "./screens/Search_Details"
