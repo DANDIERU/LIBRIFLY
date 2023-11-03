@@ -1,0 +1,73 @@
+.list-container {
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+
+.list-name {
+    font-size: 1.5rem;
+    color: #8C8C8C;
+    font-family: "Poppins", sans-serif;
+    margin: 0 !important;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-container img {
+    width: 50px;
+}
+
+.profile-container h4 {
+    font-size: 1.2rem;
+    color: #8C8C8C;
+    font-family: "Poppins", sans-serif;
+}
+
+.book-container {
+    position: relative;
+    display: flex;
+}
+
+.book-container img {
+    width: 100px;
+}
+
+.book1 {
+    position: relative;
+    z-index: 1;
+}
+
+.book2 {
+    position: absolute;
+    left: 49px;
+    z-index: 2;
+}
+
+.book3 {
+    position: absolute;
+    left: 95px;
+    z-index: 3;
+}
+
+.div-likes-container {
+    display: flex;
+    justify-content: end;
+    margin-right: 5rem;
+    margin-top: 0.5rem;
+}
+
+.div-likes {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.div-likes p {
+    font-size: 1.2rem;
+    color: #8C8C8C;
+    font-family: "Poppins", sans-serif;
+    margin: 0 !important;
+}
