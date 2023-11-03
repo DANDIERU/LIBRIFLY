@@ -1,0 +1,38 @@
+.bttns-div{
+    width: 15%;    
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.btn-add {
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    background: #9497FF;
+    border: none;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    
+}
+
+.btn-create{
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    background: none;
+    border: 2px solid #9497FF;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    
+}
+
+

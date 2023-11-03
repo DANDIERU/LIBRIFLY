@@ -1,5 +1,6 @@
 import { AttributeDetails } from "../components/BookDetails/BookDetails";
 import { AttributeNav } from "../components/NavBar/NavBar";
+import { AttributeButtonsList } from "../components/AddListButtons/AddListButtons";
 import "../components/export"
 
 
@@ -45,6 +46,12 @@ class BooksDetails extends HTMLElement {
 
         mainDiv.appendChild(rectangleNav)
 
+        ///////////// OTHER DIV /////////////
+
+        const otherDiv =this.ownerDocument.createElement("div")
+        otherDiv.classList.add("other-div")
+        mainDiv.appendChild(otherDiv)
+
         ///////////// BOOK DETAILS COMPONENT ////////       
 
         const BookDetailsDiv = this.ownerDocument.createElement("bookdetails-component")
@@ -56,7 +63,16 @@ class BooksDetails extends HTMLElement {
         BookDetailsDiv.setAttribute(AttributeDetails.genre_detail, "Fantasy")
         BookDetailsDiv.setAttribute(AttributeDetails.overview_detail, "The Fellowship of the Ring is the opening volume of J.R.R. Tolkien's iconic high-fantasy trilogy, The Lord of the Rings. This installment sets the stage for an epic quest to destroy the One Ring, which holds immense power and poses a grave threat to Middle-earth.")
 
-        mainDiv.appendChild(BookDetailsDiv)
+        otherDiv.appendChild(BookDetailsDiv)
+
+        ////////////// BUTTONS ADD /////////////
+
+        const btnsComponent = this.ownerDocument.createElement("buttons-component")
+        btnsComponent.classList.add("btns-component")
+        btnsComponent.setAttribute(AttributeButtonsList.add_to_list, "Add to a list")
+        btnsComponent.setAttribute(AttributeButtonsList.create_list, "Create a list")
+        otherDiv.appendChild(btnsComponent)
+
         this.shadowRoot.appendChild(mainDiv)
       }
     }

@@ -8,6 +8,20 @@
     
 }
 
+.other-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.btns-component{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;    
+    align-items: center;
+}
+
+
 
 
 

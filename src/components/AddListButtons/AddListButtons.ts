@@ -59,7 +59,7 @@ export default class AddButtonsList extends HTMLElement{
 
             const btnCreateList = this.ownerDocument.createElement("button")
             btnCreateList.classList.add("btn-create")
-            btnAddList.innerText = `${this.create_list}`
+            btnCreateList.innerText = `${this.create_list}`
             bttnsDiv.appendChild(btnCreateList);
 
             this.shadowRoot.appendChild(bttnsDiv)
