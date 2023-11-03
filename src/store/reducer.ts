@@ -1,7 +1,9 @@
-export const reducer = (currentAction: any, currentState: any) => {
-    const { type, payload } = currentAction; 
+import { Actions,AppState } from "../types/store";
 
-    switch (type) {    
+export const reducer = (currentAction: any, currentState: any) => {
+    const { type, payload } = currentAction;
+
+    switch (type) {
         case "NAVIGATE":
             currentState.screen = payload
         break;

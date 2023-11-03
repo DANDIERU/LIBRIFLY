@@ -4,7 +4,7 @@ export enum AttributeButtonsList {
 
 }
 
-export default class AddButtonsList extends HTMLElement{
+export class AddButtonsList extends HTMLElement{
 
     add_to_list?: string = "";
     create_list?: string = "";

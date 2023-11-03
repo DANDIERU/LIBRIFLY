@@ -8,7 +8,7 @@ export enum AttributeDetails {
 
 }
 
-export default class BookDetails extends HTMLElement{
+export class BookDetails extends HTMLElement{
 
     cover_detail?: string = "";
     title_detail?: string = "";

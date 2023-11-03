@@ -12,7 +12,7 @@ export enum AttributeNav {
 }
 
 
-export default class NavBar extends HTMLElement {
+export class NavBar extends HTMLElement {
 
     logo?: string = "";
     icon_user?: string = "";

@@ -1,18 +1,20 @@
-//import * as components from "./components/export";
-import "./components/export"
-import "./screens/Book_Details"
-import "./screens/Dashboard"
-import "./screens/Edit_Profile"
-import "./screens/Genre_Details"
-import "./screens/List_Details"
-import "./screens/My_Profile"
-import "./screens/My_Reading_lists"
-import "./screens/Register"
-import "./screens/Search_Details"
-import "./screens/Sign_In"
-import "./screens/User_Info"
+// import * as components from "./components/export";
+// import "./components/export"
+// import "./screens/Book_Details"
+// import "./screens/Dashboard"
+import "./screens/edit_profile/Edit_Profile"
+// import "./screens/Genre_Details"
+// import "./screens/List_Details"
+import "./screens/profile/My_Profile"
+// import "./screens/My_Reading_lists"
+import "./screens/register/Register"
+// import "./screens/Search_Details"
+import "./screens/sign_in/Sign_In"
+// import "./screens/User_Info"
 import { addObserver, appState } from "./store/index";
 import { screens } from "./types/navigation";
+import { navigate } from "./store/actions";
+import { Actions } from "./types/store";
 
 
 class AppContainer extends  HTMLElement {
@@ -27,9 +29,14 @@ class AppContainer extends  HTMLElement {
     }
 
     render() {
+
+        if(this.shadowRoot){ this.shadowRoot.innerHTML = ``;
+
         if(this.shadowRoot){
+            this.shadowRoot.innerHTML = ``;
+
             switch (appState.screen) {
-                case screens.SIGN_IN : 
+                case screens.SIGN_IN :
                 const signIn = this.ownerDocument.createElement("sign-in")
                 this.shadowRoot?.appendChild(signIn)
                 break;
@@ -39,47 +46,47 @@ class AppContainer extends  HTMLElement {
                 this.shadowRoot?.appendChild(register)
                 break;
 
-                case screens.DASHBOARD : 
+                case screens.DASHBOARD :
                 const dashboard = this.ownerDocument.createElement("app-dashboard")
                 this.shadowRoot?.appendChild(dashboard)
                 break;
 
-                case screens.MY_READING_LISTS : 
+                case screens.MY_READING_LISTS :
                 const myReadingList = this.ownerDocument.createElement("my-readinglist")
                 this.shadowRoot?.appendChild(myReadingList)
                 break;
 
-                case screens.BOOK_DETAILS : 
+                case screens.BOOK_DETAILS :
                 const bookDetails = this.ownerDocument.createElement("book-details")
                 this.shadowRoot?.appendChild(bookDetails)
                 break;
 
-                case screens.LIST_DETAILS : 
+                case screens.LIST_DETAILS :
                 const listDetails = this.ownerDocument.createElement("list-details")
                 this.shadowRoot?.appendChild(listDetails)
                 break;
 
-                case screens.GENRE_DETAILS : 
+                case screens.GENRE_DETAILS :
                 const denreDetails = this.ownerDocument.createElement("genre-details")
                 this.shadowRoot?.appendChild(denreDetails)
                 break;
 
-                case screens.SEARCH_DETAILS : 
+                case screens.SEARCH_DETAILS :
                 const searchDetails = this.ownerDocument.createElement("search-details")
                 this.shadowRoot?.appendChild(searchDetails)
                 break;
 
-                case screens.USER_INFO : 
+                case screens.USER_INFO :
                 const userInfo = this.ownerDocument.createElement("user-info")
                 this.shadowRoot?.appendChild(userInfo)
                 break;
 
-                case screens.PROFILE : 
+                case screens.PROFILE :
                 const profile = this.ownerDocument.createElement("my-profile")
                 this.shadowRoot?.appendChild(profile)
                 break;
 
-                case screens.EDIT_PROFILE : 
+                case screens.EDIT_PROFILE :
                 const editProfile = this.ownerDocument.createElement("edit-profile")
                 this.shadowRoot?.appendChild(editProfile)
                 break;
@@ -91,6 +98,6 @@ class AppContainer extends  HTMLElement {
 
     }
 }
-
-customElements.define("app-container", AppContainer)
+}
+customElements.define("app-container", AppContainer);
 export default AppContainer;

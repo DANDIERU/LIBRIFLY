@@ -6,7 +6,7 @@ export enum AttributeReading {
 
 }
 
-export default class SolidReading extends HTMLElement{
+export class SolidReading extends HTMLElement{
 
     main_reading?: string = "";
     btn_create?: string = "";
