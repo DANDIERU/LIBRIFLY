@@ -45,9 +45,17 @@ class MyReadingList extends HTMLElement {
 
         mainCont.appendChild(rectangleNav)
 
+
+        //////////////// DIV QUE CONTIENE READING Y EMPTY DIV /////////
+
+        const divSecond = this.ownerDocument.createElement("div")
+        divSecond.classList.add("div-second")
+        mainCont.appendChild(divSecond)
+
         
 
         ///////////////// READING COMPONENT //////////////
+
 
         const readingDiv = this.ownerDocument.createElement("solid-reading")
         readingDiv.classList.add("reading-div")
@@ -55,7 +63,19 @@ class MyReadingList extends HTMLElement {
         readingDiv.setAttribute(AttributeReading.empty_desc, "Oh, you don't have lists yet.Create your first list")
         readingDiv.setAttribute(AttributeReading.btn_create, "Create list")
         readingDiv.setAttribute(AttributeReading.img_main, "../src/img/girlreadinglist.png")
-        mainCont.appendChild(readingDiv)
+        divSecond.appendChild(readingDiv)
+
+        //////////////// EMPTY DIV ////////////////////////
+
+        const emptyDiv = this.ownerDocument.createElement("div")
+        emptyDiv.classList.add("empty-div")
+        
+        const empty = this.ownerDocument.createElement("h1")
+        empty.classList.add("empty-word")
+        empty.innerText = "EMPTY"
+        emptyDiv.appendChild(empty)
+        divSecond.appendChild(emptyDiv)
+        
 
         this.shadowRoot.appendChild(mainCont)
         

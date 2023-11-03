@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 .reading-div {
-    width: 100%;
+    width: 90%;
     height: 218px;
     background-color: #9497FF;
     display: flex;
     flex-direction: row;
     border-radius: 25px;
-    margin-top: 106px;
+    margin-top: 65px;
+    
 }
 
 .reading-content{
+    display: flex;
+    flex-direction: column;
     width: 50%;
     padding-left: 118px;
 }
