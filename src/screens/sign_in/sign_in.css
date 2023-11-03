@@ -1,0 +1,26 @@
+.signin-page {
+    height: 100%;
+    width: 100%;
+    background: #0F051D;
+    
+}
+
+.signin-card {
+    display: flex;
+    padding: 65px 204px 65px;
+    top: 10%;
+    position: relative;
+}
+
+.signin-container {
+    margin: 50px;
+}
+
+.img-png {
+    position: absolute;
+    height: 400px;
+    width: auto;
+    top: 495px;
+    left: 742px;
+    z-index: 1;
+}

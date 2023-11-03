@@ -19,7 +19,7 @@ class SignIn extends HTMLElement {
   
     render() {
       if (this.shadowRoot) {
-        this.shadowRoot.innerHTML = `holi itsh`;
+        this.shadowRoot.innerHTML = ``;
 
         const link = this.ownerDocument.createElement("link");
         link.setAttribute("rel", "stylesheet");

@@ -90,9 +90,6 @@ export class CardRegister extends HTMLElement {
         registerButton.textContent = 'Register';
         containerthree.appendChild(registerButton);
 
-        const registerWithGoogleButton = this.ownerDocument.createElement('button');
-        registerWithGoogleButton.textContent = 'Register with Google';
-        containerthree.appendChild(registerWithGoogleButton);
     
       }
 

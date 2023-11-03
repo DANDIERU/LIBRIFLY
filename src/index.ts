@@ -29,7 +29,7 @@ class AppContainer extends  HTMLElement {
     }
 
     render() {
-        if(this.shadowRoot){ this.shadowRoot.innerHTML = `holi akd`;
+        if(this.shadowRoot){ this.shadowRoot.innerHTML = ``;
             switch (appState.screen) {
                 case screens.SIGN_IN : 
                 const signIn = this.ownerDocument.createElement("sign-in")
