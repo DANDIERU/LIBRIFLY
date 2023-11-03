@@ -1,6 +1,7 @@
 import { AttributeDetails } from "../components/BookDetails/BookDetails";
 import { AttributeNav } from "../components/NavBar/NavBar";
 import { AttributeButtonsList } from "../components/AddListButtons/AddListButtons";
+import { AttributeAddList } from "../components/AddListModal/AddListModal";
 import "../components/export"
 
 
@@ -73,6 +74,17 @@ class BooksDetails extends HTMLElement {
         otherDiv.appendChild(btnsComponent)
 
         this.shadowRoot.appendChild(mainDiv)
+
+        //////////// POPUP ////////////
+        
+        /*const modalComponent = this.ownerDocument.createElement("addlist-modal")
+        modalComponent.classList.add("modal-component")
+        modalComponent.setAttribute(AttributeAddList.cover_add, "../src/img/bookdetail.png")
+        modalComponent.setAttribute(AttributeAddList.exit_button, "../src/icon/x-close.png")
+        modalComponent.setAttribute(AttributeAddList.create_button, "Create")
+        gigantDiv.appendChild(modalComponent)
+
+        this.shadowRoot.appendChild(gigantDiv)*/
       }
     }
   }

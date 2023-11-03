@@ -1,16 +1,16 @@
-// import * as components from "./components/export";
-// import "./components/export"
-// import "./screens/Book_Details"
-// import "./screens/Dashboard"
+import * as components from "./components/export";
+import "./components/export"
+import "./screens/Book_Details"
+import "./screens/Dashboard"
 import "./screens/edit_profile/Edit_Profile"
-// import "./screens/Genre_Details"
-// import "./screens/List_Details"
+import "./screens/Genre_Details"
+import "./screens/List_Details"
 import "./screens/profile/My_Profile"
-// import "./screens/My_Reading_lists"
+import "./screens/My_Reading_lists"
 import "./screens/register/Register"
-// import "./screens/Search_Details"
+import "./screens/Search_Details"
 import "./screens/sign_in/Sign_In"
-// import "./screens/User_Info"
+import "./screens/User_Info"
 import { addObserver, appState } from "./store/index";
 import { screens } from "./types/navigation";
 import { navigate } from "./store/actions";
