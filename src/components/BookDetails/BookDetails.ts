@@ -79,7 +79,7 @@ export default class BookDetails extends HTMLElement{
             detailsDiv.appendChild(infoDiv)
 
             const titleBook = this.ownerDocument.createElement("h1")
-            titleBook.classList.add("tittle-book")
+            titleBook.classList.add("title-book")
             titleBook.innerText = `${this.title_detail}`;
             infoDiv.appendChild(titleBook)
 
@@ -99,12 +99,12 @@ export default class BookDetails extends HTMLElement{
 
             const genreBook = this.ownerDocument.createElement("p")
             genreBook.classList.add("genre-Book")
-            genreBook.innerText = `Genre:${this.genre_detail}`;
+            genreBook.innerText = `Genre: ${this.genre_detail}`;
             infoDiv.appendChild(genreBook)
 
             const overviewBook = this.ownerDocument.createElement("p")
             overviewBook.classList.add("overview-book")
-            overviewBook.innerText = `Overview:${this.overview_detail}`;
+            overviewBook.innerText = `Overview: ${this.overview_detail}`;
             infoDiv.appendChild(overviewBook)
 
             this.shadowRoot.appendChild(detailsDiv)            
@@ -115,4 +115,4 @@ export default class BookDetails extends HTMLElement{
     }
 }
 
-customElements.define('book-details',BookDetails);
+customElements.define('bookdetails-component',BookDetails);

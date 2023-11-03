@@ -5,7 +5,7 @@ import { screens } from "../types/navigation";
 
 const emptyState = {
     //pantalla inicial
-  screen: screens.MY_READING_LISTS,
+  screen: screens.BOOK_DETAILS,
 };
 
 export let appState = Storage.get<AppState>({
