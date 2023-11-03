@@ -2,7 +2,7 @@ import { navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { screens } from "../../types/navigation";
 
-export class profile extends HTMLElement {
+export class userInfo extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
@@ -31,15 +31,6 @@ export class profile extends HTMLElement {
         const title = this.ownerDocument.createElement('h1');
         title.textContent = 'My Profile';
         header.appendChild(title);
-
-        const icon = this.ownerDocument.createElement('img');
-        icon.classList.add('icon-img')
-        icon.src = '/src/images/edit-03.png'; 
-        icon.alt = 'icon'
-        icon.addEventListener("click", ()=>{
-          dispatch(navigate(screens.EDIT_PROFILE)) })
-        header.appendChild(icon);
-
         
         const userSection = this.ownerDocument.createElement('section');
         profile.appendChild(userSection);
@@ -68,4 +59,4 @@ export class profile extends HTMLElement {
     }
   }
 
-  customElements.define('profile-app', profile);
+  customElements.define('user-app', userInfo);
