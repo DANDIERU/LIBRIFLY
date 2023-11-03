@@ -7,9 +7,10 @@ import { appState, dispatch } from "../store/index";
 import { AttributeNav } from "../components/NavBar/NavBar";
 import { AttributeSearch } from "../components/InputSearch/InputSearch";
 import { AttributeTopListBooks } from "../components/TopListBooks/TopListBooks";
-import { AttributeAlsoLikeBooks } from "../components/AlsoLikeBooks/AlsoLikeBooks";
+import { AttributeAlsoLikeBooks, AlsoLikeBooks } from "../components/AlsoLikeBooks/AlsoLikeBooks";
 import { AttributeBooksWeek, BooksWeek} from "../components/BooksWeek/BooksWeek";
 import { data } from "../data";
+import firebase from "../utils/firebase";
 import "../components/export";
 
 
@@ -17,6 +18,7 @@ import "../components/export";
 
 class Dashboard extends HTMLElement {
   weekCard: BooksWeek[] = [];
+  mightCard: AlsoLikeBooks[] = [];
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -27,7 +29,7 @@ class Dashboard extends HTMLElement {
     this.render();
   }
 
-  render() {
+  async render() {
     if (this.shadowRoot) {
       const link = this.ownerDocument.createElement("link");
       link.setAttribute("rel", "stylesheet");
@@ -110,6 +112,28 @@ class Dashboard extends HTMLElement {
 
       /////////////////// BOOKS WEEK //////////////////////
 
+      const booksWeekNew = await firebase.getBooks();
+      const fourBooks = booksWeekNew.slice(0,4)
+
+      fourBooks.forEach((book:any) =>{
+
+        const cardWeekly = this.ownerDocument.createElement(
+          "weekly-card"
+        ) as BooksWeek;
+        cardWeekly.setAttribute(AttributeBooksWeek.weekcover, book.coverimage);        
+        cardWeekly.setAttribute(
+          AttributeBooksWeek.weektitle,
+          book.title
+        );
+        cardWeekly.setAttribute(
+          AttributeBooksWeek.weeksubtitle,
+          book.author
+        );
+        cardWeekly.setAttribute(AttributeBooksWeek.weekcategory, book.genre);
+        this.weekCard.push(cardWeekly);
+
+      })
+      /*
       data.weeksection.forEach((card) => {
         const cardWeekly = this.ownerDocument.createElement(
           "weekly-card"
@@ -126,7 +150,7 @@ class Dashboard extends HTMLElement {
         );
         cardWeekly.setAttribute(AttributeBooksWeek.weekcategory, card.category);
         this.weekCard.push(cardWeekly);
-      });
+      }); */
 
       /////////////////// TOP LIST BOOKS //////////////////////
 
@@ -254,63 +278,32 @@ class Dashboard extends HTMLElement {
 
       const diveRectangleAlsoLike = this.ownerDocument.createElement("div");
       diveRectangleAlsoLike.classList.add("container-also-like");
-      const rectangleAlsoLike = this.ownerDocument.createElement("also-card");
       
       
+      const eightBooks = booksWeekNew.slice(0,8)
 
-      rectangleAlsoLike.classList.add("rectangle-also-like");
-      rectangleAlsoLike.setAttribute(
-        AttributeAlsoLikeBooks.onlybook,
-        "../src/img/cover1.png"
-      );
+      eightBooks.forEach((book:any) =>{
+        const rectangleAlsoLike = this.ownerDocument.createElement("also-card") as AlsoLikeBooks
+        rectangleAlsoLike.classList.add("rectangle-also-like");  
+        rectangleAlsoLike.setAttribute(AttributeAlsoLikeBooks.onlybook, book.coverimage);    
+        
+        this.mightCard.push(rectangleAlsoLike);
+
+      })
+
+
+         
       
       
-      const rectangleAlsoLike2 = this.ownerDocument.createElement("also-card");
-      rectangleAlsoLike2.setAttribute(
-        AttributeAlsoLikeBooks.onlybook,
-        "../src/img/cover1.png"
-      );
-
-      const rectangleAlsoLike3 = this.ownerDocument.createElement("also-card");
-      rectangleAlsoLike3.setAttribute(
-        AttributeAlsoLikeBooks.onlybook,
-        "../src/img/cover1.png"
-      );
-
-      const rectangleAlsoLike4 = this.ownerDocument.createElement("also-card");
-      rectangleAlsoLike4.setAttribute(
-        AttributeAlsoLikeBooks.onlybook,
-        "../src/img/cover1.png"
-      );
-
-      const rectangleAlsoLike5 = this.ownerDocument.createElement("also-card");
-      rectangleAlsoLike5.setAttribute(
-        AttributeAlsoLikeBooks.onlybook,
-        "../src/img/cover1.png"
-      );
-
-      const rectangleAlsoLike6 = this.ownerDocument.createElement("also-card");
-      rectangleAlsoLike6.setAttribute(
-        AttributeAlsoLikeBooks.onlybook,
-        "../src/img/cover1.png"
-      );
-
-      const rectangleAlsoLike7 = this.ownerDocument.createElement("also-card");
-      rectangleAlsoLike7.setAttribute(
-        AttributeAlsoLikeBooks.onlybook,
-        "../src/img/cover1.png"
-      );
-
-      const rectangleAlsoLike8 = this.ownerDocument.createElement("also-card");
-      rectangleAlsoLike8.setAttribute(
-        AttributeAlsoLikeBooks.onlybook,
-        "../src/img/cover1.png"
-      );
 
       /////////////////// APPENCHILDS //////////////////////
 
       this.weekCard.forEach((cards2) => {
         booksContainer.appendChild(cards2);
+      });
+
+      this.mightCard.forEach((cards3) => {
+        diveRectangleAlsoLike.appendChild(cards3);
       });
 
       main.appendChild(rectangleNav);
@@ -329,15 +322,7 @@ class Dashboard extends HTMLElement {
       divTopList.appendChild(rectangleTopList3);
       containMain.appendChild(titleAlsoLike);
       containMain.appendChild(diveRectangleAlsoLike);
-      diveRectangleAlsoLike.appendChild(rectangleAlsoLike);
-      diveRectangleAlsoLike.appendChild(rectangleAlsoLike2);
-      diveRectangleAlsoLike.appendChild(rectangleAlsoLike3);
-      diveRectangleAlsoLike.appendChild(rectangleAlsoLike4);
-      diveRectangleAlsoLike.appendChild(rectangleAlsoLike5);
-      diveRectangleAlsoLike.appendChild(rectangleAlsoLike6);
-      diveRectangleAlsoLike.appendChild(rectangleAlsoLike7);
-      diveRectangleAlsoLike.appendChild(rectangleAlsoLike8);
-      
+     
 
       this.shadowRoot.appendChild(main);
     }
