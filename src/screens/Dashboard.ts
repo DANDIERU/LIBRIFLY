@@ -2,9 +2,7 @@ import { AttributeNav } from "../components/NavBar/NavBar";
 import { AttributeSearch } from "../components/InputSearch/InputSearch";
 import { AttributeTopListBooks } from "../components/TopListBooks/TopListBooks";
 import { AttributeAlsoLikeBooks } from "../components/AlsoLikeBooks/AlsoLikeBooks";
-import BooksWeek, {
-  AttributeBooksWeek,
-} from "../components/BooksWeek/BooksWeek";
+import { AttributeBooksWeek, BooksWeek} from "../components/BooksWeek/BooksWeek";
 import { data } from "../data";
 import "../components/export";
 
