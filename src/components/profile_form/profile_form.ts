@@ -51,10 +51,14 @@ export class profileForm extends HTMLElement {
 
         const cancelButton = this.ownerDocument.createElement('button');
         cancelButton.textContent = 'Cancel';
+        cancelButton.addEventListener("click", ()=>{
+          dispatch(navigate(screens.PROFILE)) })
         buttonSection.appendChild(cancelButton);
 
         const saveButton = this.ownerDocument.createElement('button');
         saveButton.textContent = 'Save';
+        saveButton.addEventListener("click", ()=>{
+          dispatch(navigate(screens.PROFILE)) })
         buttonSection.appendChild(saveButton);
 
     
