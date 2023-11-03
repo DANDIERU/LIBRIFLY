@@ -1,0 +1,72 @@
+
+.details-div{
+    display: flex;    
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 0;
+}
+
+.cover-div{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.cover-img{
+    width: 280px;
+    height: 424.209px
+}
+
+.info-div{
+    width: 70%;
+}
+
+.title-book {
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.year-book{
+    color: #8C8C8C;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+
+}
+
+.author-book{
+    color: #8C8C8C;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+
+}
+
+.genre-Book {
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.overview-book {
+    width: 90%;
+    height: 150px;
+    color: #8C8C8C;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.yearauthor-div {
+    display: flex;
+    gap: 10px;
+}

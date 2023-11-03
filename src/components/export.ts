@@ -1,3 +1,7 @@
+export {SolidReading} from "./solidReading/solidReading"
+export { NavBar} from "./NavBar/NavBar"
+export {BookDetails} from "./BookDetails/BookDetails"
+export {AddButtonsList} from "./AddListButtons/AddListButtons"
 export {CardRegister} from "./register/card_register"
 export { CardSignIn } from "./sign_in/card_signin"
 export { profileForm } from "./profile_form/profile_form"
