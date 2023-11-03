@@ -1,6 +1,7 @@
 
 .details-div{
-    display: flex;
+    display: flex;    
+    width: 100%;
 }
 
 .cover-div{
@@ -21,9 +22,10 @@
 .title-book {
     color: #FFF;
     font-family: 'Poppins', sans-serif;
-    font-size: 35px;
+    font-size: 50px;
     font-style: normal;
     font-weight: 700;
+    margin-top: 10px;
 }
 
 .year-book{
@@ -53,7 +55,7 @@
 }
 
 .overview-book {
-    width: 100%;
+    width: 90%;
     height: 150px;
     color: #8C8C8C;
     font-family: 'Poppins', sans-serif;

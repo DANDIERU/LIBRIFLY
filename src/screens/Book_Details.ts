@@ -1,4 +1,5 @@
 import { AttributeDetails } from "../components/BookDetails/BookDetails";
+import { AttributeNav } from "../components/NavBar/NavBar";
 import "../components/export"
 
 
@@ -23,6 +24,28 @@ class BooksDetails extends HTMLElement {
 
         const mainDiv = this.ownerDocument.createElement("div")
         mainDiv.classList.add("main-div")
+
+        ////////////////// NAVBAR /////////////////////
+
+        const rectangleNav = this.ownerDocument.createElement("navbar-component")
+        rectangleNav.classList.add("rectangle-nav")
+        rectangleNav.setAttribute(AttributeNav.logo, "../src/icon/Iconlogo.png")
+
+        rectangleNav.setAttribute(AttributeNav.icon_user, "../src/icon/imgprofile.png")
+        rectangleNav.setAttribute(AttributeNav.user_title, "Jezzini_03")
+
+        rectangleNav.setAttribute(AttributeNav.dashboard_icon, "../src/icon/dashboardon.png")
+        rectangleNav.setAttribute(AttributeNav.dashboard_title, "Dashboard")
+
+        rectangleNav.setAttribute(AttributeNav.readinglist_icon, "../src/icon/readingoff.png")
+        rectangleNav.setAttribute(AttributeNav.readinglist_title, "My reading lists")
+
+        rectangleNav.setAttribute(AttributeNav.logout_icon, "../src/icon/logout.png")
+        rectangleNav.setAttribute(AttributeNav.logout_title, "Logout")
+
+        mainDiv.appendChild(rectangleNav)
+
+        ///////////// BOOK DETAILS COMPONENT ////////       
 
         const BookDetailsDiv = this.ownerDocument.createElement("bookdetails-component")
         BookDetailsDiv.classList.add("bookdetails-div")
