@@ -9,7 +9,7 @@
 // import "./screens/My_Reading_lists"
 import "./screens/register/Register"
 // import "./screens/Search_Details"
-// import "./screens/Sign_In"
+import "./screens/sign_in/Sign_In"
 // import "./screens/User_Info"
 import { addObserver, appState } from "./store/index";
 import { screens } from "./types/navigation";
@@ -29,7 +29,7 @@ class AppContainer extends  HTMLElement {
     }
 
     render() {
-        if(this.shadowRoot){ this.shadowRoot.innerHTML = ``;
+        if(this.shadowRoot){ this.shadowRoot.innerHTML = `holi akd`;
             switch (appState.screen) {
                 case screens.SIGN_IN : 
                 const signIn = this.ownerDocument.createElement("sign-in")

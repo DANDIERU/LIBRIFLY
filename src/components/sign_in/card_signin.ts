@@ -13,16 +13,16 @@ export class CardSignIn extends HTMLElement {
         this.shadowRoot.innerHTML = ``;
         const link = this.ownerDocument.createElement("link");
         link.setAttribute("rel", "stylesheet");
-        link.setAttribute("href", "/src/components/register/card_register.css");
+        link.setAttribute("href", "/src/components/sign_in/card_signin.css");
         this.shadowRoot?.appendChild(link);
 
-        const registerForm = this.ownerDocument.createElement('div');
-        registerForm.classList.add('register-form');
-        this.shadowRoot?.appendChild(registerForm);
+        const signinForm = this.ownerDocument.createElement('div');
+        signinForm.classList.add('signin-form');
+        this.shadowRoot?.appendChild(signinForm);
 
         const containerone = this.ownerDocument.createElement('section');
         containerone.classList.add('container-one');
-        registerForm.appendChild(containerone);
+        signinForm.appendChild(containerone);
 
         const logo = this.ownerDocument.createElement('img');
         logo.classList.add('logo-img');
@@ -31,18 +31,12 @@ export class CardSignIn extends HTMLElement {
         containerone.appendChild(logo);
 
         const h2 = this.ownerDocument.createElement('h2');
-        h2.textContent = 'Create Account';
+        h2.textContent = 'WELCOME BACK';
         containerone.appendChild(h2);
 
-        const usernameLabel = this.ownerDocument.createElement('h4');
-        usernameLabel.classList.add('subtitulo');
-        usernameLabel.textContent = 'User Name';
-        containerone.appendChild(usernameLabel);
-
-        const usernameInput = this.ownerDocument.createElement('input');
-        usernameInput.classList.add('input-info');
-        usernameInput.placeholder = 'Enter your user name';
-        containerone.appendChild(usernameInput);
+        const subtexte = this.ownerDocument.createElement('h3')
+        subtexte.textContent = 'Welcome back! Please sign in to your account.'
+        containerone.appendChild(subtexte)
 
         const emailLabel = this.ownerDocument.createElement('h4');
         emailLabel.classList.add('subtitulo');
@@ -70,33 +64,41 @@ export class CardSignIn extends HTMLElement {
         containertwo.classList.add('container-two');
         containerone.appendChild(containertwo);
 
-        const termsCheckbox = this.ownerDocument.createElement('input');
-        termsCheckbox.classList.add('check-input')
-        termsCheckbox.type = 'checkbox';
-        termsCheckbox.id = 'termsCheckbox';
-        containertwo.appendChild(termsCheckbox);
+        const remembermeCheckbox = this.ownerDocument.createElement('input');
+        remembermeCheckbox.classList.add('check-input')
+        remembermeCheckbox.type = 'checkbox';
+        remembermeCheckbox.id = 'termsCheckbox';
+        containertwo.appendChild(remembermeCheckbox);
 
-        const termsLabel = this.ownerDocument.createElement('label');
-        termsLabel.classList.add('label-text')
-        termsLabel.setAttribute('for', 'termsCheckbox');
-        termsLabel.textContent = 'I agree to the terms of service & privacy policy';
-        containertwo.appendChild(termsLabel);
+
+        const remembermeLabel = this.ownerDocument.createElement('label');
+        remembermeLabel.classList.add('label-text')
+        remembermeLabel.setAttribute('for', 'termsCheckbox');
+        remembermeLabel.textContent = 'remember me';
+        containertwo.appendChild(remembermeLabel);
+
+        const forgotPasswordLink = this.ownerDocument.createElement('a');
+        forgotPasswordLink.setAttribute('href', '#');
+        forgotPasswordLink.textContent = 'Forgot Password?';
+        containertwo.appendChild(forgotPasswordLink)
 
         const containerthree = this.ownerDocument.createElement('section');
         containerthree.classList.add('container-three');
         containerone.appendChild(containerthree);
 
         const registerButton = this.ownerDocument.createElement('button');
-        registerButton.textContent = 'Register';
+        registerButton.textContent = 'Sign In';
         containerthree.appendChild(registerButton);
 
-        const registerWithGoogleButton = this.ownerDocument.createElement('button');
-        registerWithGoogleButton.textContent = 'Register with Google';
-        containerthree.appendChild(registerWithGoogleButton);
+        const signUpLink = document.createElement('a');
+        signUpLink.setAttribute('href', '#');
+        signUpLink.textContent = "Don't Have an Account? Sign Up for Free";
+        containerthree.appendChild(signUpLink)
+
     
       }
 
     }
   }
 
-  customElements.define('card-register', CardSignIn);
+  customElements.define('card-signin', CardSignIn);
