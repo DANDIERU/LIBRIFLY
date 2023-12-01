@@ -1,6 +1,8 @@
 import { navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { screens } from "../../types/navigation";
+import { showAddModal } from "../../store/actions";
+import { uploadList } from "../../utils/firebase";
 
 
 
@@ -58,18 +60,23 @@ export class AddListModal extends HTMLElement{
             link.setAttribute("rel", "stylesheet")
             link.setAttribute("href", "../src/components/AddListModal/AddListModal.css")
             this.shadowRoot.appendChild(link)
+
+            const blurBackground = this.ownerDocument.createElement("div")
+            blurBackground.classList.add("blur-back")            
             
             const modalDiv = this.ownerDocument.createElement("div")
             modalDiv.classList.add("modal-div")
+            blurBackground.appendChild(modalDiv)
 
-            const coverCreateDiv = this.ownerDocument.createElement("div")
-            coverCreateDiv.classList.add("cover-div")
-            modalDiv.appendChild(coverCreateDiv)
+            const uploadCoverDiv = this.ownerDocument.createElement("div")
+            uploadCoverDiv.classList.add("cover-div")
+            modalDiv.appendChild(uploadCoverDiv)
 
-            const coverCreateImg = this.ownerDocument.createElement("img")
-            coverCreateImg.setAttribute("src", `${this.cover_add}`)
-            coverCreateImg.classList.add("cover-img")
-            coverCreateDiv.appendChild(coverCreateImg)
+            const coverImg = this.ownerDocument.createElement("input")            
+            coverImg.classList.add("cover-img")
+            coverImg.setAttribute("type", "file")
+            uploadCoverDiv.appendChild(coverImg)
+            
 
             const createInfoDiv = this.ownerDocument.createElement("div")
             createInfoDiv.classList.add("info-div")
@@ -83,6 +90,14 @@ export class AddListModal extends HTMLElement{
             exitIcon.classList.add("exit-icon")
             exitIcon.setAttribute("src", `${this.exit_button}`)
             exitDiv.appendChild(exitIcon)
+            exitDiv.addEventListener("click", () => {
+
+                dispatch(
+                    showAddModal(false)
+                );             
+                
+                
+            });
 
             const nameUrList = this.ownerDocument.createElement("p")
             nameUrList.classList.add("nameurlist")
@@ -103,8 +118,14 @@ export class AddListModal extends HTMLElement{
             btn_Create.innerText = `${this.create_button}`
             btn_createDiv.appendChild(btn_Create)
 
-            this.shadowRoot.appendChild(modalDiv)
+            this.shadowRoot.appendChild(blurBackground)
 
+            btn_Create.addEventListener("click", () => {
+                uploadList(inputCreateName.value, coverImg.files![0])
+                dispatch(
+                    showAddModal(false)
+                );   
+            });
             
         }
 
