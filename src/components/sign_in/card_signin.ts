@@ -2,6 +2,7 @@ import { navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { screens } from "../../types/navigation";
 import firebase from "../../Firebase/firebase";
+import { users } from "../../types/user";
 
 const credentials = { email: "", password: "" };
 

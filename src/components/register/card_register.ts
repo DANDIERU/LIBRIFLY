@@ -21,9 +21,7 @@ export class CardRegister extends HTMLElement {
     }
 
     submitForm(){
-      // firebase.addPosts(formPost);
       firebase.createUser(formPost.email,formPost.password, formPost.username);
-      // firebase.logIn(formPost.email,formPost.password);
   }
 
   changeEmail(e: any){

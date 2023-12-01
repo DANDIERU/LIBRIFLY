@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { collection, query, where, getDocs, addDoc } from "firebase/firestore";
 import { dispatch } from "../store";
+import { users } from "../types/user";
 import {
     createUserWithEmailAndPassword,
     getAuth,
@@ -18,30 +19,6 @@ export const auth = getAuth(app);
 
 
 // REGISTER
-// const registerUser = async ({
-//   email,
-//   password,
-// }: {
-//   email: string;
-//   password: string;
-// }): Promise<boolean> => {
-//   try {
-//     const userCredential = await createUserWithEmailAndPassword(
-//       auth,
-//       email,
-//       password
-//     );
-//     console.log(userCredential.user);
-//     return true;
-//   } catch (error: any) {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     console.log(errorCode, errorMessage);
-//     return false;
-//   }
-// };
-
-
 const createUser = async (email: string,password: string, username: string) => {
   //Primer paso: Crear usuario con auth
   createUserWithEmailAndPassword(auth,email,password).then(async (userCredential) => {

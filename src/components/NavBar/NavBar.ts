@@ -154,7 +154,7 @@ logoutClickHandler = () => {
         const navItemContainer3 = this.ownerDocument.createElement("div");
         navItemContainer3.classList.add("nav-itemcontainer");
         navItemContainer3.addEventListener("click", ()=>{
-          dispatch(navigate(screens.PROFILE)) })
+          dispatch(navigate(screens.SIGN_IN)) })
         
         const icon3 = document.createElement("img");
         icon3.setAttribute("src", `${this.logout_icon}`)
