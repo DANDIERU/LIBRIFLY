@@ -9,6 +9,7 @@ export const reducer = (action: any, prevState: any) => {
         case "SETUSER":
             prevState.user = action.payload;
       break;
+
     }
 
     return prevState;

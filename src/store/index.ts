@@ -16,11 +16,10 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-
 const emptyState = {
     //pantalla inicial lo que se muestra
   screen: screens.SIGN_IN,
-  user: {}
+  user: {},
 };
 
 export let appState = Storage.get<AppState>({

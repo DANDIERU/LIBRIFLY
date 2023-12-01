@@ -1,6 +1,8 @@
 import { navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { screens } from "../../types/navigation";
+import firebase from "../../Firebase/firebase";
+
 
 export enum AttributeNav {
     "logo" = "logo",
@@ -64,6 +66,10 @@ export class NavBar extends HTMLElement {
   connectedCallback() {
     this.render();
   }
+
+logoutClickHandler = () => {
+    logout();
+  };
 
   render() {
     if (this.shadowRoot) {
@@ -148,7 +154,7 @@ export class NavBar extends HTMLElement {
         const navItemContainer3 = this.ownerDocument.createElement("div");
         navItemContainer3.classList.add("nav-itemcontainer");
         navItemContainer3.addEventListener("click", ()=>{
-          dispatch(navigate(screens.REGISTER)) })
+          dispatch(navigate(screens.PROFILE)) })
         
         const icon3 = document.createElement("img");
         icon3.setAttribute("src", `${this.logout_icon}`)
@@ -169,3 +175,7 @@ export class NavBar extends HTMLElement {
 }
 
 customElements.define("navbar-component", NavBar);
+
+function logout() {
+  throw new Error("Function not implemented.");
+}

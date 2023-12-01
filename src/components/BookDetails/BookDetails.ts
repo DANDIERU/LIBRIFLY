@@ -2,6 +2,8 @@ import { navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { screens } from "../../types/navigation";
 
+
+
 export enum AttributeDetails {
     "cover_detail" = "cover_detail",
     "title_detail" ="title_detail",
@@ -53,9 +55,13 @@ export class BookDetails extends HTMLElement{
         this.attachShadow({mode: "open"});
     }
 
-    connectedCallback(){
+
+     connectedCallback() {
+        
         this.render();
-    }
+      }
+    
+
 
     render(){
         if(this.shadowRoot) {

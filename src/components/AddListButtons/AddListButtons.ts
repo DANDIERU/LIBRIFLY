@@ -1,3 +1,4 @@
+
 export enum AttributeButtonsList {
     "add_to_list" = "add_to_list",
     "create_list" ="create_list",    
@@ -40,6 +41,8 @@ export class AddButtonsList extends HTMLElement{
     connectedCallback(){
         this.render();
     }
+
+    
 
     render(){
         if(this.shadowRoot) {

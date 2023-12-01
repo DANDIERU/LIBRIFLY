@@ -105,7 +105,9 @@ export class CardSignIn extends HTMLElement {
 
         const singinButton = this.ownerDocument.createElement('button');
         singinButton.textContent = 'Sign In';
+
         singinButton.addEventListener("click", this.handleSignInButton);
+        
         containerthree.appendChild(singinButton);
 
         const signUpLink = document.createElement('a');
