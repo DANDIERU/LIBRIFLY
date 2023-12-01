@@ -1,8 +1,8 @@
 import { firebaseConfig } from "./firebaseconfig";
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-import { collection, query, where, getDocs, addDoc } from "firebase/firestore";
-import { dispatch } from "../store";
+import { collection, query, where, getDocs, addDoc, updateDoc } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, uploadString, getDownloadURL } from "firebase/storage";
 import { users } from "../types/user";
 import {
     createUserWithEmailAndPassword,
@@ -16,6 +16,7 @@ import {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 export const auth = getAuth(app);
+const storage = getStorage();
 
 
 // REGISTER
@@ -95,6 +96,58 @@ async function copyBooksToBooksList() {
 
 
 
+const getBooks = async () => {
+  const querySnapshot = await getDocs(collection(db,"Library"));
+  const transformed:any = [];
+
+  querySnapshot.forEach((doc)=>{
+      const data = doc.data();
+      transformed.push({id: doc.id, ...data})
+
+
+  })
+
+  return transformed;
+
+}
+
+
+
+
+export const uploadList = async (name: string, imagen: File) => {
+  console.log(imagen)
+  const imageURL: string | void = await subirArchivo(imagen)
+  await subirDatos( name, imageURL)
+}
+
+export const subirArchivo = async (file: File) => {
+  const storageRef = await ref(storage, `imagesProductos/${file.name}`);
+  await uploadBytes(storageRef, file).then((snapshot) => {
+    console.log('Uploaded a blob or file!');
+  });
+  return await pedirURL(`imagesProductos/${file.name}`)
+}
+
+export const pedirURL = async (path: string) => {
+  const url = await getDownloadURL(ref(storage, `${path}`))
+  console.log(url)
+  return url
+}
+
+const subirDatos = async (name: string, imagen: string | void) => {
+  console.log("intenta subir")
+  const docRef = await addDoc(collection(db, "Lists"), {
+    name: name,      
+    imagen: imagen,
+    date: new Date()
+  });
+  console.log("Se subio el producto")
+  await updateDoc(docRef, {
+      listID: docRef.id
+      }
+  )
+}
+
 
 
 
@@ -103,9 +156,9 @@ async function copyBooksToBooksList() {
 export default {
     createUser,
     signIn,
-    copyBooksToBooksList
+    copyBooksToBooksList,
+    getBooks,
   };
-
 
 
 

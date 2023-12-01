@@ -1,7 +1,7 @@
 import { navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { screens } from "../../types/navigation";
-import firebase from "../../utils/firebase";
+import firebase from "../../Firebase/firebase";
 
 export enum AttributeBooksWeek {
 	"weekcover" = "weekcover",
