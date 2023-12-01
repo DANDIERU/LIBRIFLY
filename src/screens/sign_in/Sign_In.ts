@@ -4,6 +4,7 @@ import { screens } from "../../types/navigation";
 import { ScreenActions } from "../../types/store";
 import { appState, dispatch } from "../../store/index";
 
+
 class SignIn extends HTMLElement {
     constructor() {
       super();
@@ -15,9 +16,9 @@ class SignIn extends HTMLElement {
       this.render();
     }
   
-    
+
   
-    render() {
+    async render() {
       if (this.shadowRoot) {
         this.shadowRoot.innerHTML = ``;
 

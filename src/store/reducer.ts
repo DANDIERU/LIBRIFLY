@@ -1,13 +1,15 @@
 import { Actions,AppState } from "../types/store";
 
-export const reducer = (currentAction: any, currentState: any) => {
-    const { type, payload } = currentAction;
-
-    switch (type) {
+export const reducer = (action: any, prevState: any) => {
+    switch (action.type) {
         case "NAVIGATE":
-            currentState.screen = payload
+            prevState.screen = action.payload;
         break;
+
+        case "SETUSER":
+            prevState.user = action.payload;
+      break;
     }
 
-    return currentState;
+    return prevState;
 }
