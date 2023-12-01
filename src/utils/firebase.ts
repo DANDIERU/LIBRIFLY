@@ -1,7 +1,9 @@
 
 import { initializeApp } from 'firebase/app';
+import { collection, getFirestore, getDocs} from 'firebase/firestore'
 import { getFirestore, doc, setDoc, getDoc, collection, query, getDocs, onSnapshot, orderBy, addDoc, updateDoc} from 'firebase/firestore'
 import { getStorage, ref, uploadBytes, uploadString, getDownloadURL } from "firebase/storage";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCoO6QgyXgzAyyOFfP0Q_VmNtYl6gOMSfY",
@@ -16,6 +18,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage();
 
+
 const getBooks = async () => {
     const querySnapshot = await getDocs(collection(db,"Library"));
     const transformed:any = [];
@@ -29,6 +32,11 @@ const getBooks = async () => {
 
     return transformed;
 
+}
+
+
+export default {
+    getBooks
 }
 
 export const uploadList = async (name: string, imagen: File) => {

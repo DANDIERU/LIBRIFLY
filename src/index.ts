@@ -28,7 +28,7 @@ class AppContainer extends  HTMLElement {
         this.render()
     }
 
-    render() {
+    async render() {
 
         if(this.shadowRoot){ this.shadowRoot.innerHTML = ``;
 

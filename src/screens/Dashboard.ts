@@ -12,7 +12,6 @@ import { AttributeBooksWeek, BooksWeek} from "../components/BooksWeek/BooksWeek"
 import { viewBookDetails } from "../store/actions";
 import { data } from "../data";
 
-
 import firebase from "../utils/firebase";
 import "../components/export";
 
@@ -281,7 +280,7 @@ class Dashboard extends HTMLElement {
 
       const diveRectangleAlsoLike = this.ownerDocument.createElement("div");
       diveRectangleAlsoLike.classList.add("container-also-like");
-      
+
       
       const eightBooks = booksWeekNew.slice(0,8)
 
@@ -295,7 +294,20 @@ class Dashboard extends HTMLElement {
       })
 
 
-         
+      
+      const eightBooks = booksWeekNew.slice(0,8)
+
+      eightBooks.forEach((book:any) =>{
+        const rectangleAlsoLike = this.ownerDocument.createElement("also-card") as AlsoLikeBooks
+        rectangleAlsoLike.classList.add("rectangle-also-like");  
+        rectangleAlsoLike.setAttribute(AttributeAlsoLikeBooks.onlybook, book.coverimage);    
+        
+        this.mightCard.push(rectangleAlsoLike);
+
+      })
+
+
+
       
       
 

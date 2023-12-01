@@ -1,3 +1,4 @@
+
 import { dispatch } from "../../store";
 import { showAddModal } from "../../store/actions";
 import { navigate } from "../../store/actions";
@@ -46,6 +47,8 @@ export class AddButtonsList extends HTMLElement{
     connectedCallback(){
         this.render();
     }
+
+    
 
     render(){
         if(this.shadowRoot) {

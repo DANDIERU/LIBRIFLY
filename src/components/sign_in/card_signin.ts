@@ -1,6 +1,10 @@
 import { navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { screens } from "../../types/navigation";
+import firebase from "../../Firebase/firebase";
+import { users } from "../../types/user";
+
+const credentials = { email: "", password: "" };
 
 export class CardSignIn extends HTMLElement {
     constructor() {
@@ -10,6 +14,10 @@ export class CardSignIn extends HTMLElement {
 
     connectedCallback() {
       this.render();
+    }
+
+    async handleSignInButton() {
+      firebase.signIn(credentials);
     }
 
     render() {
@@ -51,6 +59,9 @@ export class CardSignIn extends HTMLElement {
         emailInput.classList.add('input-info');
         emailInput.type = 'email';
         emailInput.placeholder = 'Enter your email';
+        emailInput.addEventListener(
+          "change",
+          (e: any) => (credentials.email = e.target.value));
         containerone.appendChild(emailInput);
 
         const passwordLabel = this.ownerDocument.createElement('h4');
@@ -62,6 +73,9 @@ export class CardSignIn extends HTMLElement {
         passwordInput.classList.add('input-info');
         passwordInput.type = 'password';
         passwordInput.placeholder = 'Enter your password';
+        passwordInput.addEventListener(
+          "change",
+          (e: any) => (credentials.password = e.target.value));
         containerone.appendChild(passwordInput);
 
         const containertwo = this.ownerDocument.createElement('section');
@@ -92,8 +106,9 @@ export class CardSignIn extends HTMLElement {
 
         const singinButton = this.ownerDocument.createElement('button');
         singinButton.textContent = 'Sign In';
-        singinButton.addEventListener("click", ()=>{
-          dispatch(navigate(screens.DASHBOARD)) })
+
+        singinButton.addEventListener("click", this.handleSignInButton);
+        
         containerthree.appendChild(singinButton);
 
         const signUpLink = document.createElement('a');

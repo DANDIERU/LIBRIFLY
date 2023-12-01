@@ -2,6 +2,8 @@ import { navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { screens } from "../../types/navigation";
 
+
+
 export enum AttributeDetails {
     "cover_detail" = "cover_detail",
     "title_detail" ="title_detail",
@@ -56,9 +58,13 @@ export class BookDetails extends HTMLElement{
         
     }
 
-    connectedCallback(){
+
+     connectedCallback() {
+        
         this.render();
-    }
+      }
+    
+
 
     updateBookDetails(bookDetails: any) {
         this.bookDetails = bookDetails;

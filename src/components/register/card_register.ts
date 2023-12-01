@@ -1,6 +1,14 @@
 import { navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { screens } from "../../types/navigation";
+import firebase from "../../Firebase/firebase";
+import { users } from "../../types/user";
+
+const formPost: Omit<users, "id"> = {
+  email: "",
+  password: "",
+  username: "",
+};
 
 export class CardRegister extends HTMLElement {
     constructor() {
@@ -11,6 +19,24 @@ export class CardRegister extends HTMLElement {
     connectedCallback() {
       this.render();
     }
+
+    submitForm(){
+      firebase.createUser(formPost.email,formPost.password, formPost.username);
+  }
+
+  changeEmail(e: any){
+        formPost.email = e.target.value;
+    }
+
+    changePassword(e:any){
+        formPost.password = e.target.value;
+    }
+
+    changeUsername(e:any){
+        formPost.username = e.target.value;
+    }
+
+
 
     render() {
       if (this.shadowRoot) {
@@ -46,6 +72,7 @@ export class CardRegister extends HTMLElement {
         const usernameInput = this.ownerDocument.createElement('input');
         usernameInput.classList.add('input-info');
         usernameInput.placeholder = 'Enter your user name';
+        usernameInput.addEventListener("change", this.changeUsername);
         containerone.appendChild(usernameInput);
 
         const emailLabel = this.ownerDocument.createElement('h4');
@@ -57,6 +84,7 @@ export class CardRegister extends HTMLElement {
         emailInput.classList.add('input-info');
         emailInput.type = 'email';
         emailInput.placeholder = 'Enter your email';
+        emailInput.addEventListener("change", this.changeEmail);
         containerone.appendChild(emailInput);
 
         const passwordLabel = this.ownerDocument.createElement('h4');
@@ -68,6 +96,8 @@ export class CardRegister extends HTMLElement {
         passwordInput.classList.add('input-info');
         passwordInput.type = 'password';
         passwordInput.placeholder = 'Enter your password';
+        passwordInput.addEventListener("change", this.changePassword);
+
         containerone.appendChild(passwordInput);
 
         const containertwo = this.ownerDocument.createElement('section');
@@ -92,8 +122,7 @@ export class CardRegister extends HTMLElement {
 
         const registerButton = this.ownerDocument.createElement('button');
         registerButton.textContent = 'Register';
-        registerButton.addEventListener("click", ()=>{
-          dispatch(navigate(screens.DASHBOARD)) })
+        registerButton.addEventListener("click",this.submitForm);
         containerthree.appendChild(registerButton);
 
         const signUpLink = document.createElement('a');
