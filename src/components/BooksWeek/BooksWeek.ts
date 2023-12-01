@@ -1,6 +1,7 @@
 import { navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { screens } from "../../types/navigation";
+import firebase from "../../utils/firebase";
 
 export enum AttributeBooksWeek {
 	"weekcover" = "weekcover",
@@ -77,8 +78,18 @@ export class BooksWeek extends HTMLElement {
             weekContainer.classList.add("week-cont") 
             const secondCover = this.ownerDocument.createElement("img")
             secondCover.classList.add("second-cover")
-            secondCover.addEventListener("click", ()=>{
-                dispatch(navigate(screens.BOOK_DETAILS)) })
+            secondCover.addEventListener("click", async () => {
+                
+                const books = await firebase.getBooks();
+                console.log(books)
+                books.forEach((book: any)=>{
+                    if (book.title === this.weektitle) {
+                    dispatch({ type: "VIEW_BOOK_DETAILS", payload: book });
+                    dispatch(navigate(screens.BOOK_DETAILS));  
+                    }
+                })
+                
+            });
 
             const weekIcon = this.ownerDocument.createElement("img")
             weekIcon.classList.add("week-icon")

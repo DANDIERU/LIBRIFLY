@@ -3,9 +3,11 @@ import { Actions, AppState, Observer } from "../types/store";
 import { reducer } from "./reducer";
 import { screens } from "../types/navigation";
 
-const emptyState = {
+const emptyState: AppState = {
     //pantalla inicial lo que se muestra
   screen: screens.DASHBOARD,
+  bookDetails: undefined,
+  modalComponent: undefined,
 };
 
 export let appState = Storage.get<AppState>({
@@ -24,7 +26,7 @@ export const dispatch = (action: any) => {
   const clone = JSON.parse(JSON.stringify(appState));
   const newState = reducer(action, clone);
   appState = newState;
-
+  console.log(appState)
   persistStore(newState);
   notifyObservers();
 };
