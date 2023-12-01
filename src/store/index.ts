@@ -16,11 +16,16 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-const emptyState = {
+const emptyState: AppState = {
     //pantalla inicial lo que se muestra
+
   screen: screens.SIGN_IN,
   user: {},
-};
+
+  screen: screens.DASHBOARD,
+  bookDetails: undefined,
+  modalComponent: undefined,
+
 
 export let appState = Storage.get<AppState>({
   key: PersistanceKeys.STORE,
@@ -38,7 +43,7 @@ export const dispatch = (action: any) => {
   const clone = JSON.parse(JSON.stringify(appState));
   const newState = reducer(action, clone);
   appState = newState;
-
+  console.log(appState)
   persistStore(newState);
   notifyObservers();
 };

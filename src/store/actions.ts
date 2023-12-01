@@ -7,10 +7,26 @@ export const navigate = (screen: screens) => {
     };
 };
 
+
 export const setUserCredentials = (user: string) => {
     return {
         type: "SETUSER",
         payload: user,
+    };
+};
+
+
+export const viewBookDetails = (book: any) => {
+    return {
+        type: "VIEW_BOOK_DETAILS",
+        payload: book,
+    };
+};
+
+export const showAddModal = (add: any) => {
+    return {
+        type: "SHOW_ADD_MODAL",
+        payload: add,
     };
 };
 

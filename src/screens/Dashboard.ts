@@ -9,7 +9,9 @@ import { AttributeSearch } from "../components/InputSearch/InputSearch";
 import { AttributeTopListBooks } from "../components/TopListBooks/TopListBooks";
 import { AttributeAlsoLikeBooks, AlsoLikeBooks } from "../components/AlsoLikeBooks/AlsoLikeBooks";
 import { AttributeBooksWeek, BooksWeek} from "../components/BooksWeek/BooksWeek";
+import { viewBookDetails } from "../store/actions";
 import { data } from "../data";
+
 import firebase from "../utils/firebase";
 import "../components/export";
 
@@ -102,13 +104,13 @@ class Dashboard extends HTMLElement {
 
       /////////////////// INPUT SEARCH //////////////////////
 
-      const rectangleSearch =
+      /*const rectangleSearch =
         this.ownerDocument.createElement("search-component");
       rectangleSearch.classList.add("rectangle-search");
       rectangleSearch.setAttribute(
         AttributeSearch.search_icon,
         "../src/icon/search_icon.png"
-      );
+      );*/
 
       /////////////////// BOOKS WEEK //////////////////////
 
@@ -278,7 +280,7 @@ class Dashboard extends HTMLElement {
 
       const diveRectangleAlsoLike = this.ownerDocument.createElement("div");
       diveRectangleAlsoLike.classList.add("container-also-like");
-      
+
       
       const eightBooks = booksWeekNew.slice(0,8)
 
@@ -292,7 +294,20 @@ class Dashboard extends HTMLElement {
       })
 
 
-         
+      
+      const eightBooks = booksWeekNew.slice(0,8)
+
+      eightBooks.forEach((book:any) =>{
+        const rectangleAlsoLike = this.ownerDocument.createElement("also-card") as AlsoLikeBooks
+        rectangleAlsoLike.classList.add("rectangle-also-like");  
+        rectangleAlsoLike.setAttribute(AttributeAlsoLikeBooks.onlybook, book.coverimage);    
+        
+        this.mightCard.push(rectangleAlsoLike);
+
+      })
+
+
+
       
       
 
@@ -309,7 +324,7 @@ class Dashboard extends HTMLElement {
       main.appendChild(rectangleNav);
       main.appendChild(containMain);
       containMain.appendChild(header);
-      header.appendChild(rectangleSearch);
+      //header.appendChild(rectangleSearch);
       header.appendChild(title);
       header.appendChild(divHeader);
       divHeader.appendChild(imgHeader);

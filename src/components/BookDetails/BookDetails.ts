@@ -15,6 +15,8 @@ export enum AttributeDetails {
 }
 
 export class BookDetails extends HTMLElement{
+    bookDetails?: any;
+    
 
     cover_detail?: string = "";
     title_detail?: string = "";
@@ -53,6 +55,7 @@ export class BookDetails extends HTMLElement{
     constructor(){
         super();
         this.attachShadow({mode: "open"});
+        
     }
 
 
@@ -62,6 +65,11 @@ export class BookDetails extends HTMLElement{
       }
     
 
+
+    updateBookDetails(bookDetails: any) {
+        this.bookDetails = bookDetails;
+        this.render();
+    }
 
     render(){
         if(this.shadowRoot) {
