@@ -6,3 +6,17 @@ export const navigate = (screen: screens) => {
         payload: screen,
     };
 };
+
+export const viewBookDetails = (book: any) => {
+    return {
+        type: "VIEW_BOOK_DETAILS",
+        payload: book,
+    };
+};
+
+export const showAddModal = (add: any) => {
+    return {
+        type: "SHOW_ADD_MODAL",
+        payload: add,
+    };
+};

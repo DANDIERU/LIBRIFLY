@@ -3,7 +3,10 @@ import { AttributeSearch } from "../components/InputSearch/InputSearch";
 import { AttributeTopListBooks } from "../components/TopListBooks/TopListBooks";
 import { AttributeAlsoLikeBooks, AlsoLikeBooks } from "../components/AlsoLikeBooks/AlsoLikeBooks";
 import { AttributeBooksWeek, BooksWeek} from "../components/BooksWeek/BooksWeek";
+import { viewBookDetails } from "../store/actions";
 import { data } from "../data";
+
+
 import firebase from "../utils/firebase";
 import "../components/export";
 

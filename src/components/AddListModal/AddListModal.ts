@@ -1,3 +1,10 @@
+import { navigate } from "../../store/actions";
+import { dispatch } from "../../store/index";
+import { screens } from "../../types/navigation";
+
+
+
+
 export enum AttributeAddList {
     "cover_add" = "cover_add",
     "exit_button" = "exit_button",    

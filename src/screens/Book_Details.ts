@@ -2,7 +2,9 @@ import { AttributeDetails } from "../components/BookDetails/BookDetails";
 import { AttributeNav } from "../components/NavBar/NavBar";
 import { AttributeButtonsList } from "../components/AddListButtons/AddListButtons";
 import { AttributeAddList } from "../components/AddListModal/AddListModal";
+import { showAddModal } from "../store/actions";
 import "../components/export"
+import { appState } from "../store";
 
 
 class BooksDetails extends HTMLElement {
@@ -13,6 +15,15 @@ class BooksDetails extends HTMLElement {
   
     connectedCallback() {
       this.render();
+    }
+
+    updateBookDetails(bookDetails: any) {
+      const bookDetailsComponent = this.shadowRoot?.querySelector(
+        "bookdetails-component"
+      ) as any;
+      if (bookDetailsComponent) {
+        bookDetailsComponent.updateBookDetails(bookDetails);
+      }
     }
   
   
@@ -56,12 +67,12 @@ class BooksDetails extends HTMLElement {
 
         const BookDetailsDiv = this.ownerDocument.createElement("bookdetails-component")
         BookDetailsDiv.classList.add("bookdetails-div")
-        BookDetailsDiv.setAttribute(AttributeDetails.cover_detail, "../src/img/bookdetail.png")
-        BookDetailsDiv.setAttribute(AttributeDetails.title_detail, "Title Book")
-        BookDetailsDiv.setAttribute(AttributeDetails.year_detail, "2020")
-        BookDetailsDiv.setAttribute(AttributeDetails.author_detail, "Eloisa")
-        BookDetailsDiv.setAttribute(AttributeDetails.genre_detail, "Fantasy")
-        BookDetailsDiv.setAttribute(AttributeDetails.overview_detail, "The Fellowship of the Ring is the opening volume of J.R.R. Tolkien's iconic high-fantasy trilogy, The Lord of the Rings. This installment sets the stage for an epic quest to destroy the One Ring, which holds immense power and poses a grave threat to Middle-earth.")
+        BookDetailsDiv.setAttribute(AttributeDetails.cover_detail, appState.bookDetails.coverimage)
+        BookDetailsDiv.setAttribute(AttributeDetails.title_detail, appState.bookDetails.title)
+        BookDetailsDiv.setAttribute(AttributeDetails.year_detail, appState.bookDetails.publication)
+        BookDetailsDiv.setAttribute(AttributeDetails.author_detail, appState.bookDetails.author)
+        BookDetailsDiv.setAttribute(AttributeDetails.genre_detail, appState.bookDetails.genre)
+        BookDetailsDiv.setAttribute(AttributeDetails.overview_detail, appState.bookDetails.overview)
 
         otherDiv.appendChild(BookDetailsDiv)
 
@@ -76,15 +87,20 @@ class BooksDetails extends HTMLElement {
         this.shadowRoot.appendChild(mainDiv)
 
         //////////// POPUP ////////////
-        
-        /*const modalComponent = this.ownerDocument.createElement("addlist-modal")
-        modalComponent.classList.add("modal-component")
-        modalComponent.setAttribute(AttributeAddList.cover_add, "../src/img/bookdetail.png")
-        modalComponent.setAttribute(AttributeAddList.exit_button, "../src/icon/x-close.png")
-        modalComponent.setAttribute(AttributeAddList.create_button, "Create")
-        gigantDiv.appendChild(modalComponent)
 
-        this.shadowRoot.appendChild(gigantDiv)*/
+        if (appState.modalComponent === true) {
+          console.log("Abro modal")
+          const modalComponent = this.ownerDocument.createElement("addlist-modal")
+          modalComponent.classList.add("modal-component")
+          modalComponent.setAttribute(AttributeAddList.cover_add, "../src/img/bookdetail.png")
+          modalComponent.setAttribute(AttributeAddList.exit_button, "../src/icon/x-close.png")
+          modalComponent.setAttribute(AttributeAddList.create_button, "Create")          
+          this.shadowRoot.appendChild(modalComponent)
+        }
+        
+        
+        
+        
       }
     }
   }

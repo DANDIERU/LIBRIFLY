@@ -1,3 +1,9 @@
+import { dispatch } from "../../store";
+import { showAddModal } from "../../store/actions";
+import { navigate } from "../../store/actions";
+import { screens } from "../../types/navigation";
+
+
 export enum AttributeButtonsList {
     "add_to_list" = "add_to_list",
     "create_list" ="create_list",    
@@ -56,11 +62,20 @@ export class AddButtonsList extends HTMLElement{
             btnAddList.classList.add("btn-add")
             btnAddList.innerText = `${this.add_to_list}`
             bttnsDiv.appendChild(btnAddList);
+            
 
             const btnCreateList = this.ownerDocument.createElement("button")
             btnCreateList.classList.add("btn-create")
             btnCreateList.innerText = `${this.create_list}`
             bttnsDiv.appendChild(btnCreateList);
+            btnCreateList.addEventListener("click", () => {
+
+                dispatch(
+                    showAddModal(true)
+                );             
+                
+                
+            });
 
             this.shadowRoot.appendChild(bttnsDiv)
 
