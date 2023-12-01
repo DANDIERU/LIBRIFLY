@@ -1,3 +1,7 @@
+import { navigate } from "../../store/actions";
+import { dispatch } from "../../store/index";
+import { screens } from "../../types/navigation";
+
 export enum AttributeTopListBooks {
   "listname" = "listname",
   "profileimg" = "profileimg",
@@ -72,6 +76,10 @@ export class TopListBooks extends HTMLElement {
 
       const profileContainer = this.ownerDocument.createElement("div");
       profileContainer.classList.add("profile-container");
+      // cambbiar a user info
+      profileContainer.addEventListener("click", ()=>{
+        dispatch(navigate(screens.USER_INFO)) });
+
       const profileImg = this.ownerDocument.createElement("img");
       profileImg.classList.add("profile-img");
       profileImg.setAttribute("src", `${this.profileimg}`);
@@ -80,6 +88,10 @@ export class TopListBooks extends HTMLElement {
       profileName.textContent = `${this.profilename}`;
       const bookContainer = this.ownerDocument.createElement("div");
       bookContainer.classList.add("book-container");
+      // list detail
+      bookContainer.addEventListener("click", ()=>{
+        dispatch(navigate(screens.BOOK_DETAILS)) });
+
       const book1 = this.ownerDocument.createElement("img");
       book1.classList.add("book1");
       book1.setAttribute("src", `${this.book1}`);
