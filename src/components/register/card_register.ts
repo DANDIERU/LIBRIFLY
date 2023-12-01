@@ -1,6 +1,10 @@
 import { navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { screens } from "../../types/navigation";
+import firebase from "../../Firebase/firebase";
+
+
+const credentials = { email: "", password: "" };
 
 export class CardRegister extends HTMLElement {
     constructor() {
@@ -10,6 +14,10 @@ export class CardRegister extends HTMLElement {
 
     connectedCallback() {
       this.render();
+    }
+
+    async handleRegisterButton() {
+      firebase.registerUser(credentials)
     }
 
     render() {
@@ -57,6 +65,9 @@ export class CardRegister extends HTMLElement {
         emailInput.classList.add('input-info');
         emailInput.type = 'email';
         emailInput.placeholder = 'Enter your email';
+        emailInput.addEventListener(
+          "change",
+          (e: any) => (credentials.email = e.target.value));
         containerone.appendChild(emailInput);
 
         const passwordLabel = this.ownerDocument.createElement('h4');
@@ -68,6 +79,9 @@ export class CardRegister extends HTMLElement {
         passwordInput.classList.add('input-info');
         passwordInput.type = 'password';
         passwordInput.placeholder = 'Enter your password';
+        passwordInput.addEventListener(
+          "change",
+          (e: any) => (credentials.password = e.target.value));
         containerone.appendChild(passwordInput);
 
         const containertwo = this.ownerDocument.createElement('section');
@@ -92,8 +106,7 @@ export class CardRegister extends HTMLElement {
 
         const registerButton = this.ownerDocument.createElement('button');
         registerButton.textContent = 'Register';
-        registerButton.addEventListener("click", ()=>{
-          dispatch(navigate(screens.DASHBOARD)) })
+        registerButton.addEventListener("click", this.handleRegisterButton);
         containerthree.appendChild(registerButton);
 
         const signUpLink = document.createElement('a');

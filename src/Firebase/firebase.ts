@@ -16,6 +16,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 export const auth = getAuth(app);
 
+
+// REGISTER
 const registerUser = async ({
   email,
   password,
@@ -39,7 +41,9 @@ const registerUser = async ({
   }
 };
 
-const loginUser = async ({
+
+//SIGN IN
+const signIn = async ({
   email,
   password,
 }: {
@@ -61,7 +65,7 @@ const loginUser = async ({
 
 export default {
     registerUser,
-    loginUser,
+    signIn,
   };
 
 

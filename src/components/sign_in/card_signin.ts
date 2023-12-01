@@ -15,8 +15,8 @@ export class CardSignIn extends HTMLElement {
       this.render();
     }
 
-    async handleLoginButton() {
-      firebase.loginUser(credentials);
+    async handleSignInButton() {
+      firebase.signIn(credentials);
     }
 
     render() {
@@ -60,8 +60,7 @@ export class CardSignIn extends HTMLElement {
         emailInput.placeholder = 'Enter your email';
         emailInput.addEventListener(
           "change",
-          (e: any) => (credentials.email = e.target.value)
-        );
+          (e: any) => (credentials.email = e.target.value));
         containerone.appendChild(emailInput);
 
         const passwordLabel = this.ownerDocument.createElement('h4');
@@ -75,8 +74,7 @@ export class CardSignIn extends HTMLElement {
         passwordInput.placeholder = 'Enter your password';
         passwordInput.addEventListener(
           "change",
-          (e: any) => (credentials.password = e.target.value)
-        );
+          (e: any) => (credentials.password = e.target.value));
         containerone.appendChild(passwordInput);
 
         const containertwo = this.ownerDocument.createElement('section');
@@ -107,7 +105,7 @@ export class CardSignIn extends HTMLElement {
 
         const singinButton = this.ownerDocument.createElement('button');
         singinButton.textContent = 'Sign In';
-        singinButton.addEventListener("click", this.handleLoginButton);
+        singinButton.addEventListener("click", this.handleSignInButton);
         containerthree.appendChild(singinButton);
 
         const signUpLink = document.createElement('a');
