@@ -105,13 +105,13 @@ class Dashboard extends HTMLElement {
 
       /////////////////// INPUT SEARCH //////////////////////
 
-      const rectangleSearch =
+      /*const rectangleSearch =
         this.ownerDocument.createElement("search-component");
       rectangleSearch.classList.add("rectangle-search");
       rectangleSearch.setAttribute(
         AttributeSearch.search_icon,
         "../src/icon/search_icon.png"
-      );
+      );*/
 
       /////////////////// BOOKS WEEK //////////////////////
 
@@ -312,7 +312,7 @@ class Dashboard extends HTMLElement {
       main.appendChild(rectangleNav);
       main.appendChild(containMain);
       containMain.appendChild(header);
-      header.appendChild(rectangleSearch);
+      //header.appendChild(rectangleSearch);
       header.appendChild(title);
       header.appendChild(divHeader);
       divHeader.appendChild(imgHeader);
